@@ -1,0 +1,104 @@
+.button {
+    background-color: #38B6FF;
+    width: 20rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 10px;
+    margin: auto;
+    margin-top: 30;
+    font-family: Alata
+}
+
+.container {
+    background-color: #121212; 
+    height: 100vh;
+    width: 100vw;
+    padding: 0
+}
+
+.cornerPicOne {
+    height: 50%;
+    width: 30%;
+    top: -200px;
+    left: -200px;
+    background-color: #38B6FF;
+    position: absolute;
+    border-radius: 50%
+}
+
+.heading {
+    font-family: Alata;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin: auto;
+    width: fit-content
+}
+
+.headingMobile {
+    font-family: Alata;
+    text-align: center;
+    color: white;
+    font-size: 33px;
+    margin: auto;
+    margin-top: -30px;
+    width: fit-content
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    text-align: center
+}
+
+.stepContainer {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 0px;
+    margin: auto
+}
+
+.stepContainerMobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: auto
+}
+
+.stepText {
+    color: white;
+    font-size: 20px;
+    font-family: Alata;
+    display: inline-block
+}
+
+.stepTextMobile {
+    color: white;
+    font-size: 17px;
+    font-family: Alata;
+    display: inline-block
+}
+
+.steps {
+    height: 100%;
+    width: 20%
+}
+
+.stepsContainer {
+    display: flex;
+    flex-direction: column;
+    width: fit-content; 
+    height: fit-content;
+    margin: auto;
+    margin-top: 20
+}
+
+.stepsContainerMobile {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}

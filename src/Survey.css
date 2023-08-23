@@ -1,0 +1,201 @@
+.ageInput {
+    height: 80px;
+    width: 80px;
+    border-radius: 20%;
+    text-align: center;
+    border-width: 20px;
+    border-color: #38B6FF;
+    font-size: 25px;
+    font-family: Alata;
+}
+
+.backBtn {
+    display: flex;
+    height: 65px;
+    width: 300px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: lightcoral;
+    color: white;
+    margin-top: 15px;
+}
+
+.interestTextArea {
+    width: 600px;
+    height: 300px;
+    font-family: Alata;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.interestTextAreaMobile {
+    width: 330px;
+    height: 300px;
+    font-family: Alata;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.interestSubheading {
+    text-align: center;
+    font-weight: 300;
+}
+
+.interestSubheadingContainer {
+    margin-bottom: -30px;
+    margin-top: -30px;
+}
+
+.mainContainer {
+    width: 60%;
+    height: 500px;
+    margin-top: -20px;
+}
+
+.mainContainerMobile {
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: -20px;
+}
+
+.innerRangeContainer {
+    display: flex;
+    margin: -30px;
+}
+
+.innerRangeContainerMobile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.nextBtn {
+    height: 65px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Alata;
+    background-color: #38B6FF;
+    color: white;
+    margin-top: 30px;
+}
+
+.occasionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.occasionIcon {
+    height: 90px;
+    width: 90px;
+}
+
+.occasionName {
+    font-weight: 300;
+}
+
+.occasionsRow {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.occasionsRowMobile {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 90px;
+}
+
+.occasionSubheading {
+    margin-top: -30px;
+    font-size: 16px;
+    padding: 0px;
+    font-weight: 300;
+}
+
+.occasionInput {
+    margin-top: -50px;
+    padding: 15px;
+    width: 300px;
+    height: 30px;
+    border: 2px solid #38B6FF;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Alata;
+}
+
+.outerRangeContainer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.question {
+    font-family: Alata;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.questionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+
+.rangeContainer {
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    font-family: Alata;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a9dfff;
+    margin: 20px;
+}
+
+.surveyContainer {
+    background-image: url('surveybg.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.surveyContainerMobile {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.sliderContainer {
+    width: 40%
+}
+
+.sliderContainerMobile {
+    width: 310px;
+}
+
+.waiting {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    gap: 30px;
+    font-family: Alata;
+    font-size: 20px;
+}
