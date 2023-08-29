@@ -1,18 +1,65 @@
+.amazonPrimeLogo {
+    height: 30px;
+    width: 30px;
+}
+
+.goToWebsiteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #A6DFFF;
+    margin-bottom: 30px;
+}
+
+.goToWebsiteBtnText {
+    font-size: 20px;
+    font-family: Alata;
+    color: white;
+}
+
 .giftDisplayContainer {
     height: 100vh;
     width: 90vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    flex-wrap: wrap;
     margin: auto;
     padding: 40px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.giftDisplayContainerMobile {
+    height: 100vh;
+    overflow-y: visible;
 }
 
 .giftDisplayHeader {
     font-family: Alata;
     text-align: center;
+    color: #373737;
 }
 
-.giftDisplayEmailHeader {
-    text-align: center;
-    font-weight: 300;
+.giftDisplayHeaderContainer {
+    background-color: white;
+    width: fit-content;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.giftDisplayEmailContainer {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .giftDisplayEmailInput {
@@ -29,9 +76,138 @@
     justify-content: center;
 }
 
-.productContainer {
-    height: 350px;
+.headerBg {
+    height: 120px;
     width: 320px;
+}
+
+.mainGiftDisplayContainer {
+    height: 100vh;
+    overflow: scroll;
+    background-color: #F6F6F6;
+}
+
+.mainPrimeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A6DFFF;
+    height: 80px;
+    width: 380px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.productDescriptionContainer {
+    width: 310px;
+    height: 115px;
+    font-family: Jost;
+    margin-bottom: 10px;
+    margin-top: -100px;
+    margin: auto;
+}
+
+.productDescription {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.productContainer {
+    height: 695px;
+    width: 380px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.productInfoContainer {
+    margin-top: -20px;
+    margin-bottom: -30px;
+}
+
+.productHeading {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 40px;
     border-radius: 10px;
-    border: 2px solid #38B6FF;
+    font-family: Jost;
+    color: #373737;
+}
+
+.productHeadingContainer {
+    height: 120px;
+    width: 310px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 5px 5px 5px #EFEFEF;
+}
+
+.productCardContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.primeEligibleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px
+}
+
+.primeEligibleText {
+    font-size: 20px;
+    font-family: Jost;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 5px 5px 5px #EFEFEF;
+    border-radius: 10px;
+    height: 70px;
+    width: 140px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-family: Alata;
+    text-align: center;
+    font-size: 30px;
+    color: #373737;
+}
+
+.productImage {
+    width: 100%;
+    height: 100%;
+}
+
+.productImageContainer {
+    width: 190px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textBg {
+    display: flex;
+    justify-content: center;
 }

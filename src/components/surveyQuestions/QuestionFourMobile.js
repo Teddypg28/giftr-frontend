@@ -1,15 +1,89 @@
 import React from 'react';
 
-import '../../Survey.css'
-
-function QuestionFourMobile({budget, isFirstBudgetRender, handleBudgetClick}) {
+function QuestionFourMobile({occasion, handleOccasionIconClick, handleOccasionInputChange, occasionInputValue, allFree, isFirstRender}) {
+    
     return (
-        <div className='innerRangeContainerMobile'>
-            <div style={{opacity: budget !== 50 && !isFirstBudgetRender && '20%'}} onClick={() => handleBudgetClick(50)} className='rangeContainer'>$0-$50</div>
-            <div style={{opacity: budget !== 100 && !isFirstBudgetRender && '20%'}} onClick={() => handleBudgetClick(100)} className='rangeContainer'>$50-$100</div>
-            <div style={{opacity: budget !== 150 && !isFirstBudgetRender && '20%'}} onClick={() => handleBudgetClick(150)} className='rangeContainer'>$100-$150</div>
-            <div style={{opacity: budget !== 151 && !isFirstBudgetRender && '20%'}} onClick={() => handleBudgetClick(151)} className='rangeContainer'>$150+</div>
+    <>
+        <div className='mainContainerMobile'>
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== 'birthday' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('birthday')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='birthday icon' src={require('../../occasion-icons/birthday.png')} />
+                    <h3 className='occasionName'>Birthday</h3>
+                </div>
+                <div style={{opacity: occasion !== 'christmas' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('christmas')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='christmas icon' src={require('../../occasion-icons/christmas.png')} />
+                    <h3 className='occasionName'>Christmas</h3>
+                </div>
+            </div>
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== 'anniversary' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('anniversary')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='anniversary icon' src={require('../../occasion-icons/anniversary.png')} />
+                    <h3 className='occasionName'>Anniversary</h3>
+                </div>
+                <div style={{opacity: occasion !== 'baby shower' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('baby shower')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='baby shower icon' src={require('../../occasion-icons/baby-shower.png')} />
+                    <h3 className='occasionName'>Baby Shower</h3>
+                </div>
+            </div>
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== 'appreciation' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('appreciation')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='appreciation icon' src={require('../../occasion-icons/appreciation.png')} />
+                    <h3 className='occasionName'>Appreciation</h3>
+                </div>
+                <div style={{opacity: occasion !== 'baptism' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('baptism')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='baptism icon' src={require('../../occasion-icons/baptism.png')} />
+                    <h3 className='occasionName'>Baptism</h3>
+                </div>
+            </div>
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== 'bridal shower' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('bridal shower')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='bridal shower icon' src={require('../../occasion-icons/bridal-shower.png')} />
+                    <h3 className='occasionName'>Bridal Shower</h3>
+                </div>
+                <div style={{opacity: occasion !== 'easter' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('easter')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='easter icon' src={require('../../occasion-icons/easter.png')} />
+                    <h3 className='occasionName'>Easter</h3>
+                </div>
+            </div>
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== "father's day" && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick("father's day")} className='occasionContainer'>
+                    <img className='occasionIcon' alt='fathers day icon' src={require('../../occasion-icons/fathers-day.png')} />
+                    <h3 className='occasionName'>Father's Day</h3>
+                </div>
+                <div style={{opacity: occasion !== "mother's day" && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick("mother's day")} className='occasionContainer'>
+                    <img className='occasionIcon' alt='mothers day icon' src={require('../../occasion-icons/mothers-day.png')} />
+                    <h3 className='occasionName'>Mother's Day</h3>
+                </div>
+            </div> 
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== 'hannukah' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('hannukah')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='hannukah icon' src={require('../../occasion-icons/hanukkah.png')} />
+                    <h3 className='occasionName'>Hanukkah</h3>
+                </div>
+                <div style={{opacity: occasion !== 'graduation' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('graduation')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='graduation icon' src={require('../../occasion-icons/graduation.png')} />
+                    <h3 className='occasionName'>Graduation</h3>
+                </div>
+            </div>
+            <div className='occasionsRowMobile'>
+                <div style={{opacity: occasion !== "new year's" && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick("new year's")} className='occasionContainer'>
+                    <img className='occasionIcon' alt="new year's icon" src={require('../../occasion-icons/new-years.png')} />
+                    <h3 className='occasionName'>New Year's</h3>
+                </div>
+                <div style={{opacity: occasion !== "valentine's day" && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick("valentine's day")} className='occasionContainer'>
+                    <img className='occasionIcon' alt='valentines day icon' src={require('../../occasion-icons/valentines-day.png')} />
+                    <h3 className='occasionName'>Valentine's Day</h3>
+                </div>
+            </div>
+            <div>
+                <div style={{opacity: occasion !== 'wedding' && !isFirstRender && !allFree && '20%'}} onClick={() => handleOccasionIconClick('wedding')} className='occasionContainer'>
+                    <img className='occasionIcon' alt='wedding icon' src={require('../../occasion-icons/wedding.png')} />
+                    <h3 className='occasionName'>Wedding</h3>
+                </div>
+            </div>
         </div>
+        <input onChange={(e) => handleOccasionInputChange(e)} value={occasionInputValue} className='occasionInput' placeholder="Don't see it listed? Enter it here!" />
+    </>
     );
 }
 

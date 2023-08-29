@@ -2,19 +2,33 @@ import React from 'react';
 
 import '../../Survey.css'
 
-function QuestionTwo({windowSizeQuery, interests, setInterests}) {
+import { Slider, createTheme, ThemeProvider } from '@mui/material';
 
-    const handleInterestsChange = (e) => {
-        setInterests(e.target.value)
+function QuestionTwo({ageInputValue, windowSizeQuery, setAgeInputValue, setAge}) {
+
+    const blueTheme = createTheme({
+        palette: {
+            primary: {
+                main: '#38B6FF'
+            }
+        }
+    })
+
+    const handleSliderChange = (e) => {
+        isNaN(e.target.value) || e.target.value === ' ' || e.target.value === '' ? setAgeInputValue('')
+        :
+        setAgeInputValue(parseInt(e.target.value))
+        setAge(parseInt(e.target.value))
     }
 
     return (
         <>
-            <div className='interestSubheadingContainer'>
-                <h3 className='interestSubheading'>Try to think of at least 3-5 and enter them in the text box below.</h3>
-                <h3 className='interestSubheading'>Make sure to <strong>separate each one with a comma.</strong></h3>
+            <input value={ageInputValue} onChange={e => handleSliderChange(e)} className='ageInput' />
+            <div className={windowSizeQuery ? 'sliderContainerMobile' : 'sliderContainer'}>
+                <ThemeProvider theme={blueTheme}>
+                    <Slider value={ageInputValue} step={1} max={100} min={1} onChange={handleSliderChange} />
+                </ThemeProvider>
             </div>
-            <textarea className={windowSizeQuery ? 'interestTextAreaMobile' : 'interestTextArea'} value={interests} onChange={handleInterestsChange} placeholder={`Example: home decor, working out, cooking`}/>
         </>
     );
 }

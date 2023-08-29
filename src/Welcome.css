@@ -1,5 +1,6 @@
 .button {
     background-color: #38B6FF;
+    cursor: pointer;
     width: 20rem;
     height: 4rem;
     display: flex;
@@ -11,6 +12,12 @@
     margin: auto;
     margin-top: 30;
     font-family: Alata
+}
+
+.closeBtn {
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
 }
 
 .container {
@@ -49,10 +56,90 @@
     width: fit-content
 }
 
+.headerLinksContainer {
+    position: absolute;
+    top: 80px;
+    right: 280px;
+    display: flex;
+    gap: 40px
+}
+
+.headerLink {
+    color: white;
+    font-family: Alata;
+    border-bottom: 2px solid #38B6FF;
+    cursor: pointer;
+}
+
 .logo {
     height: 200px;
     width: 200px;
     text-align: center
+}
+
+.modalImage {
+    position: absolute;
+    height: 350px;
+}
+
+.modalHeading {
+    font-family: Alata;
+    text-align: center;
+    color: #38B6FF;
+    font-size: 45px;
+}
+
+.modalPara {
+    font-size: 24px;
+    text-align: center;
+    width: 50%;
+    font-family: Jost;
+    margin: auto;
+    line-height: 50px;
+    margin-top: 40px;
+}
+
+.modalParaMobile {
+    text-align: center;
+    font-size: 18px;
+    font-family: Jost;
+}
+
+.menuIcon {
+    position: absolute;
+    right: 30px;
+    top: 85px;
+    cursor: pointer;
+}
+
+.menuCloseBtn {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.menuItem {
+    border-bottom: 2px solid #38B6FF;
+    font-size: 30px;
+    font-family: Jost;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.menuItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
 }
 
 .stepContainer {

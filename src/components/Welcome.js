@@ -1,14 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import '../Welcome.css'
 
+import Modal from 'react-modal';
+
+import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { AiOutlineMenu } from 'react-icons/ai'
+
 import { useMediaQuery } from 'react-responsive';
+import Menu from './Menu';
 
 function Welcome({setStartSurvey}) {
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
+    const [aboutModalVisible, setAboutModalVisible] = useState(false)
+    const [disclosureModalVisible, setDisclosureModalVisible] = useState(false)
+    const [menuVisible, setMenuVisible] = useState(false)
+
+    const closeModal = () => {
+        setAboutModalVisible(false)
+        setDisclosureModalVisible(false)
+    }
+
+    const handleAffiliateDisclosureClick = () => {
+        setMenuVisible(false)
+        setDisclosureModalVisible(true)
+    }
+
+    const handleAboutUsClick = () => {
+        setMenuVisible(false)
+        setAboutModalVisible(true)
+    }
+
+    const showMenu = () => {
+        setMenuVisible(true)
+    }
+
+    Modal.setAppElement('#root')
+
     return (
         <>
+            <Modal isOpen={aboutModalVisible}>
+                <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
+                {!windowSizeQuery && <img alt='' className='modalImage' src={require('../gift.png')} /> }
+                <h1 className='modalHeading'>What We Do</h1>
+                <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
+                    Gift shopping can sometimes <strong>be way more of a headache than it has to be.</strong> When the ideas aren't churning, instead of being a fun activity,
+                    it can quickly induce all sorts of unneeded stress about picking out a gift for that special someone.
+                </p>
+                <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
+                    The solution? <strong>Let us do the work for you!</strong> Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
+                    You will now be able to do all of your gift shopping <strong>within minutes!</strong>
+                </p>
+            </Modal>
+            <Modal isOpen={disclosureModalVisible}>
+                <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
+                {!windowSizeQuery && <img alt='' className='modalImage' src={require('../shoppingBag.png')} />}
+                <h1 className='modalHeading'>Affiliate Disclosure</h1>
+                <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
+                    If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
+                </p>
+                <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
+                    This commission comes at <strong>NO extra cost from your end.</strong> It is simply a way for Amazon to compensate us for recommending their products to others like you!
+                </p>
+            </Modal>
+            {menuVisible && <Menu setMenuVisible={setMenuVisible} handleAboutUsClick={handleAboutUsClick} handleAffiliateDisclosureClick={handleAffiliateDisclosureClick} /> }
+            {windowSizeQuery ?  <AiOutlineMenu onClick={showMenu}  size={30} color='white' className='menuIcon' />
+            :
+            <div className='headerLinksContainer'>
+                <p className='headerLink' onClick={handleAboutUsClick}>About Us</p>
+                <p className='headerLink' onClick={handleAffiliateDisclosureClick}>Affiliate Disclosure</p>
+            </div>
+            }
             <div className='container'>
                 <div className='cornerPicOne'></div>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -31,11 +95,10 @@ function Welcome({setStartSurvey}) {
                         </div>
                 </div>
                 <div onClick={() => setStartSurvey(true)} className='button'>
-                        <h1>Find Gift Ideas</h1>
+                        <h1>Start Here</h1>
                 </div>
             </div>
         </>
-
     );
 }
 

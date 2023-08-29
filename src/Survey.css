@@ -10,6 +10,7 @@
 }
 
 .backBtn {
+    cursor: pointer;
     display: flex;
     height: 65px;
     width: 300px;
@@ -20,6 +21,13 @@
     background-color: lightcoral;
     color: white;
     margin-top: 15px;
+}
+
+.emailNameContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 50px;
 }
 
 .interestTextArea {
@@ -71,6 +79,17 @@
     margin-bottom: 30px;
 }
 
+.male, .female {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #F4F4F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .nextBtn {
     height: 65px;
     width: 300px;
@@ -82,6 +101,7 @@
     font-family: Alata;
     background-color: #38B6FF;
     color: white;
+    cursor: pointer;
     margin-top: 30px;
 }
 
@@ -90,6 +110,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .occasionIcon {
@@ -122,7 +143,7 @@
     font-weight: 300;
 }
 
-.occasionInput {
+.occasionInput, .emailInput, .nameInput {
     margin-top: -50px;
     padding: 15px;
     width: 300px;
@@ -145,6 +166,14 @@
     margin-top: 35px;
 }
 
+.questionError {
+    font-family: Alata;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 35px;
+    color: #FF6060;
+}
+
 .questionContainer {
     display: flex;
     flex-direction: column;
@@ -154,8 +183,13 @@
     margin-top: 50px;
 }
 
+.questionTwoContainer {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+}
 
-.rangeContainer {
+.rangeContainer, .genderContainer {
     width: 300px;
     height: 70px;
     border-radius: 10px;
@@ -198,4 +232,17 @@
     gap: 30px;
     font-family: Alata;
     font-size: 20px;
+}
+
+.waitingMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    margin-top: -50px;
+    gap: 30px;
+    font-family: Alata;
+    font-size: 15px;
 }

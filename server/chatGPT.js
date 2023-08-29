@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: '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'
 })
 
 const getListResults = async (question) => {
@@ -10,7 +10,7 @@ const getListResults = async (question) => {
         messages: [{'role':'user', 'content': question}]
     })
     
-    return chatCompletion.choices[0].message
+    return chatCompletion.choices[0].message.content
 }
 
 export { getListResults }

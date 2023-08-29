@@ -1,35 +1,19 @@
 import React from 'react';
 
-import '../../Survey.css'
+import { FaFemale } from 'react-icons/fa'
+import { FaMale } from 'react-icons/fa'
 
-import { Slider, createTheme, ThemeProvider } from '@mui/material';
-
-
-function QuestionOne({ageInputValue, windowSizeQuery, setAgeInputValue}) {
-
-    const blueTheme = createTheme({
-        palette: {
-            primary: {
-                main: '#38B6FF'
-            }
-        }
-    })
-
-    const handleSliderChange = (e) => {
-        isNaN(e.target.value) || e.target.value === '' ? 
-        setAgeInputValue(0) :
-        setAgeInputValue(parseInt(e.target.value))
-    }
+function QuestionOne({handleGenderClick, gender, isFirstGenderRender}) {
 
     return (
-        <>
-            <input value={ageInputValue} onChange={e => handleSliderChange(e)} className='ageInput' />
-            <div className={windowSizeQuery ? 'sliderContainerMobile' : 'sliderContainer'}>
-                <ThemeProvider theme={blueTheme}>
-                    <Slider value={ageInputValue} step={1} max={100} min={1} onChange={handleSliderChange} />
-                </ThemeProvider>
+        <div className='questionTwoContainer'>
+            <div onClick={() => handleGenderClick('male')} className='male' style={{backgroundColor: '#C4E8FD', opacity: gender === 'male' || isFirstGenderRender ? null : '20%'}}>
+                <FaMale size={100} color='white' />
             </div>
-        </>
+            <div onClick={() => handleGenderClick('female')} className='female' style={{backgroundColor: '#FDE4F3', opacity: gender === 'female' || isFirstGenderRender ? null : '20%'}}>
+                <FaFemale size={100} color='white' />
+            </div>
+        </div>
     );
 }
 

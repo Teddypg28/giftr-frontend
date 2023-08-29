@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-
-import axios from 'axios';
-
 import { useMediaQuery } from 'react-responsive';
 
+import axios from 'axios';
 import '../Survey.css'
 
-import QuestionOne from './surveyQuestions/QuestionOne';
 import QuestionTwo from './surveyQuestions/QuestionTwo';
+import QuestionOne from './surveyQuestions/QuestionOne'
 import QuestionThree from './surveyQuestions/QuestionThree';
-import QuestionThreeMobile from './surveyQuestions/QuestionThreeMobile';
-import WaitingScreen from './WaitingScreen';
-import GiftDisplay from './GiftDisplay';
 import QuestionFour from './surveyQuestions/QuestionFour';
 import QuestionFourMobile from './surveyQuestions/QuestionFourMobile';
+import WaitingScreen from './WaitingScreen';
+import GiftDisplay from './GiftDisplay';
+import GetEmail from './surveyQuestions/GetEmail';
 
-function Survey(props) {
+function Survey() {
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
@@ -24,15 +22,21 @@ function Survey(props) {
     const [isFirstRender, setIsFirstRender] = useState(true)
     const [allFree, setAllFree] = useState(true)
 
-    const [isFirstBudgetRender, setIsFirstBudgetRender] = useState(true)
+    const [isFirstGenderRender, setIsFirstGenderRender] = useState(true)
     const [surveyComplete, setSurveyComplete] = useState(false)
     const [isDoneWaiting, setIsDoneWaiting] = useState(false)
+    const [isRequestSuccessful, setIsRequestSuccessful] = useState(null)
+    const [error, setError] = useState('')
 
     const [age, setAge] = useState(0)
+    const [gender, setGender] = useState('')
     const [interests, setInterests] = useState('')
     const [occasion, setOccasion] = useState('')
     const [occasionInputValue, setOccasionInputValue] = useState('')
-    const [budget, setBudget] = useState([])
+    const [email, setEmail] = useState('')
+    const [firstName, setFirstName] = useState('')
+
+    const [productsObject, setProductsObject] = useState({})
 
     const handleOccasionIconClick = (name) => {
         setIsFirstRender(false)
@@ -46,55 +50,98 @@ function Survey(props) {
         }
     }
 
-    const handleBudgetClick = (amount) => {
-        setIsFirstBudgetRender(false)
-        setBudget(amount)
-    }
+    // const handleBudgetClick = (amount) => {
+    //     setIsFirstBudgetRender(false)
+    //     setBudget(amount)
+    // }
 
     const handleOccasionInputChange = (e) => {
         setOccasion('')
         setOccasionInputValue(e.target.value)
     }
 
-    const findGifts = async () => {
-        const answersObject = {
-            age,
-            interests: interests.split(', '),
-            occasion: occasionInputValue === '' ? occasion : occasionInputValue,
-            budget
-        }
-        try {
-            const res = await axios.post('http://localhost:5000/products', answersObject)
-            setSurveyComplete(true)
-            console.log(res.data)
-        } catch (error) {
-            alert('Sorry, there is currently a network issue. Please try again later!')
-            console.log(error)
-        }
+    const handleFirstNameInputChange = (e) => {
+        setFirstName(e.target.value)
+    }
+    
+    const handleEmailInputChange = (e) => {
+        setEmail(e.target.value)
     }
 
+    const handleGenderClick = (gender) => {
+        setIsFirstGenderRender(false)
+        setGender(gender)
+    }
+
+    const findGifts = async () => {
+            if (firstName === '' || email === '') {
+                setError('Please enter both your first name and email address')
+                setTimeout(() => {
+                    setError('')
+                }, 3000);
+            }
+             else {
+                const answersObject = {
+                    age,
+                    gender,
+                    interests: interests.split(', '),
+                    occasion: occasionInputValue === '' ? occasion : occasionInputValue,
+                    firstName, 
+                    email
+                }
+        
+                try {
+                    setSurveyComplete(true)
+                    const res = await axios.post('http://localhost:5000/products', answersObject)
+                    if (res.status === 200) {
+                        setIsRequestSuccessful(true)
+                        setProductsObject(res.data)
+                    } 
+                } catch (error) {
+                    setIsRequestSuccessful(false)
+                    console.log(error)
+                }
+            }
+        }
+
     const questionOptions = {
-        1:  <QuestionOne ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} windowSizeQuery={windowSizeQuery} />,
-        2:  <QuestionTwo interests={interests} setInterests={setInterests} windowSizeQuery={windowSizeQuery} />,
-        3: windowSizeQuery ? 
-        <QuestionThreeMobile occasionInputValue={occasionInputValue} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
-        <QuestionThree occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick}/>,
-        4:
-        windowSizeQuery ? <QuestionFourMobile budget={budget} handleBudgetClick={handleBudgetClick} isFirstBudgetRender={isFirstBudgetRender} /> :
-        <QuestionFour budget={budget} handleBudgetClick={handleBudgetClick} isFirstBudgetRender={isFirstBudgetRender} />
+        1:  <QuestionOne handleGenderClick={handleGenderClick} gender={gender} isFirstGenderRender={isFirstGenderRender} />,
+        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} windowSizeQuery={windowSizeQuery} />,
+        3:  <QuestionThree interests={interests} setInterests={setInterests} windowSizeQuery={windowSizeQuery} />,
+        4:  windowSizeQuery ? 
+            <QuestionFourMobile occasionInputValue={occasionInputValue} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
+            <QuestionFour occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick}/>,
+        5: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
+        // 5:
+        // windowSizeQuery ? <QuestionFiveMobile budget={budget} handleBudgetClick={handleBudgetClick} isFirstBudgetRender={isFirstBudgetRender} /> :
+        // <QuestionFive budget={budget} handleBudgetClick={handleBudgetClick} isFirstBudgetRender={isFirstBudgetRender} />
     }
         
     const handleNextBtnClick = () => {
-        currentQuestion === 1 && setAge(ageInputValue)
-    
-        if (currentQuestion === 2 && interests === '') {
-            alert('Please enter at least 3-5 interests before continuing.')
-        } else if (currentQuestion === 3 && occasion === '' && occasionInputValue === '') {
-            alert('Please select the occasion before continuing.')
-        } else if (currentQuestion === 4 && budget === []) {
-            alert('Please select your budget.')
-        } else {
-            currentQuestion !== 4 && setCurrentQuestion(currentQuestion + 1)
+     if (currentQuestion === 1 && gender === '') {
+        setError('Please select a gender')
+        setTimeout(() => {
+            setError('')
+        }, 1500);
+    } else if (currentQuestion === 2 && (ageInputValue === 0 || ageInputValue === '')) {
+        setError('Please enter a valid age')
+        setTimeout(() => {
+            setError('')
+        }, 1500);
+    }
+        else if (currentQuestion === 3 && interests.trim() === '') {
+            setError('Please enter a couple of interests')
+            setTimeout(() => {
+                setError('')
+            }, 2500);
+        } else if (currentQuestion === 4 && occasion === '' && occasionInputValue === '') {
+            setError('Please select an occasion')
+            setTimeout(() => {
+                setError('')
+            }, 1500);
+        } 
+        else {
+            currentQuestion !== 5 && setCurrentQuestion(currentQuestion + 1)
         }
     }
 
@@ -103,26 +150,27 @@ function Survey(props) {
     }
 
     const questions = {
-        1: 'What is his or her age?', 
-        2: `What are some interests that he or she has?`,
-        3: 'What is the special occasion?',
-        4: 'What is your budget?'
+        1: 'What is his or her gender?',
+        2: `What is ${gender === 'male' ? 'his' : 'her'} age?`, 
+        3: `What are some interests that ${gender === 'male' ? 'he' : 'she'} has?`,
+        4: 'What is the special occasion?',
+        5: 'Where should we send your gift list to?'
     }
 
     return (
       !surveyComplete ? 
         
         <div className={windowSizeQuery ? 'surveyContainerMobile' : 'surveyContainer'}>
-             <h1 style={{marginTop: currentQuestion === 3 && 10}} className='question'>{questions[currentQuestion]}</h1>
+             <h1 style={{marginTop: currentQuestion === 3 && 10}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>
-            {currentQuestion === 4 && 
+            {currentQuestion === 5 && 
             <div onClick={findGifts} className='nextBtn'>
                 <h3>Find Me Gifts</h3>
             </div>
             }
-            {currentQuestion !== 4 && 
+            {currentQuestion !== 5 && 
             <div onClick={handleNextBtnClick} className='nextBtn'>
                 <h3>Next</h3>
             </div>}
@@ -136,9 +184,9 @@ function Survey(props) {
 
         !isDoneWaiting ?  
         
-        <WaitingScreen setIsDoneWaiting={setIsDoneWaiting} />
+        <WaitingScreen isRequestSuccessful={isRequestSuccessful} setIsDoneWaiting={setIsDoneWaiting} />
 
-        : <GiftDisplay />
+        :  <GiftDisplay productsObject={productsObject} />
 
     );
 }
