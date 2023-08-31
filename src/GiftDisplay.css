@@ -12,6 +12,7 @@
     border-radius: 10px;
     background-color: #A6DFFF;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .goToWebsiteBtnText {

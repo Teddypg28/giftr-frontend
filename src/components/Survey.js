@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import axios from 'axios';
 import '../Survey.css'
+
+import axios from 'axios';
+import validator from 'validator';
 
 import QuestionTwo from './surveyQuestions/QuestionTwo';
 import QuestionOne from './surveyQuestions/QuestionOne'
@@ -50,11 +52,6 @@ function Survey() {
         }
     }
 
-    // const handleBudgetClick = (amount) => {
-    //     setIsFirstBudgetRender(false)
-    //     setBudget(amount)
-    // }
-
     const handleOccasionInputChange = (e) => {
         setOccasion('')
         setOccasionInputValue(e.target.value)
@@ -74,13 +71,21 @@ function Survey() {
     }
 
     const findGifts = async () => {
-            if (firstName === '' || email === '') {
+            if (firstName === '') {
                 setError('Please enter both your first name and email address')
                 setTimeout(() => {
                     setError('')
                 }, 3000);
             }
              else {
+
+                if (!validator.isEmail(email)) {
+                    setError('Please enter a valid email address so we can send you your gift ideas!')
+                setTimeout(() => {
+                    setError('')
+                    }, 4000);
+                } else {
+
                 const answersObject = {
                     age,
                     gender,
@@ -103,6 +108,7 @@ function Survey() {
                 }
             }
         }
+        }
 
     const questionOptions = {
         1:  <QuestionOne handleGenderClick={handleGenderClick} gender={gender} isFirstGenderRender={isFirstGenderRender} />,
@@ -112,9 +118,6 @@ function Survey() {
             <QuestionFourMobile occasionInputValue={occasionInputValue} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
             <QuestionFour occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick}/>,
         5: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
-        // 5:
-        // windowSizeQuery ? <QuestionFiveMobile budget={budget} handleBudgetClick={handleBudgetClick} isFirstBudgetRender={isFirstBudgetRender} /> :
-        // <QuestionFive budget={budget} handleBudgetClick={handleBudgetClick} isFirstBudgetRender={isFirstBudgetRender} />
     }
         
     const handleNextBtnClick = () => {

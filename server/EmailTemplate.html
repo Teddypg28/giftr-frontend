@@ -1,0 +1,30 @@
+<html lang="en">
+<body style="text-align: left; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <p style="font-size: 22px; width: 700px; margin: auto; margin-bottom: 30px;">
+        Hey {{name}}, 
+    </p>
+    <p style="font-size: 22px; width: 700px; margin: auto; margin-bottom: 30px">
+        Here's your full gift list that we generated. Each item in the list has a clickable link that
+        takes you directly to the product page.
+    </p>
+    <p style="font-size: 22px; width: 700px; margin: auto; margin-bottom: 30px; ">
+        Happy shopping and thank you for using Giftr! Come use us again soon!
+    </p>
+    <ol style="text-align: left; font-size: 25px; width: 700px; margin: auto; margin-bottom: 30px">
+        {{#each productData}}
+            <li style="color: black; margin-bottom: 20px;">
+                <a href={{this.link}} style="width: 500px; color: black; margin-bottom: 50px" >{{this.name}}</a>
+            </li>
+        {{/each}}
+    </ol>
+    <p style="font-style: italic; font-size: 12px; width: 700px; margin: auto; text-align: center;">
+        Affiliate Disclosure: Upon making a purchase through any of these links, we, Giftly, will earn a small commission
+        from Amazon at no additional expense from you. It is simply a way for Amazon to compensate us for reffering others
+        like you to their products!
+    </p>
+    <div style="width: 120px; margin: auto; margin-top: 30px;">
+        <img src="cid:logo" style="height: 120px; width: 120px; border-radius: 50%" />
+    </div>
+</body>
+</html>
+

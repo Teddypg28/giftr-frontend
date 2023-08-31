@@ -9,10 +9,7 @@ function App() {
   const [startSurvey, setStartSurvey] = useState(false)
 
   return !startSurvey ? <Welcome setStartSurvey={setStartSurvey} /> : <Survey />
-
-  // return <GiftDisplay />
   
 }
-
 
 export default App;

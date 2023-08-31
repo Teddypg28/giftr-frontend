@@ -53,6 +53,9 @@ function Welcome({setStartSurvey}) {
                     The solution? <strong>Let us do the work for you!</strong> Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
                     You will now be able to do all of your gift shopping <strong>within minutes!</strong>
                 </p>
+                <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
+                    Have questions or want to contact us? Send us an email at <strong>support@usegiftr.com</strong>. We look forward to talking with you!
+                </p>
             </Modal>
             <Modal isOpen={disclosureModalVisible}>
                 <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />

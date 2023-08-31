@@ -2,14 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
 
-import config from 'config'
-
 import { getListResults } from '../server/chatGPT.js'
-
-if (!config.get('giftr_openAIApiKey') || !config.get('giftr_rainforestApiKey')) {
-    console.error('API KEYS NOT SET')
-    process.exit(1)
-}
+import sendEmail from './sendEmail.js'
 
 const app = express()
 const PORT = 5000
@@ -45,7 +39,7 @@ app.post('/products', async (req, res) => {
         interestsString = interests[0]
     }
     
-    const chatGPTRequestMessage = `Please create a list of 3 cool ${occasion} gift ideas that can be found on Amazon for a ${age} year old ${gender} who enjoys ${interestsString} with a 1 sentence description for each idea.
+    const chatGPTRequestMessage = `Please create a list of 5 cool ${occasion} gift ideas that can be found on Amazon for a ${age} year old ${gender} who enjoys ${interestsString} with a 1 sentence description for each idea.
     Please do not include any Amazon links and please separate the idea and description with a colon`
     
     const list = await getListResults(chatGPTRequestMessage)
@@ -54,13 +48,14 @@ app.post('/products', async (req, res) => {
 
     const productsObject = {}
 
-    for (let i = 1; i<4; i++) {
+    for (let i = 1; i<6; i++) {
         productsObject[i] = {}
     }
 
-    for (let i = 1; i<4; i++) {
+    for (let i = 1; i<6; i++) {
         const removedNumberString = reformattedList.split(`${i}. `)
-        const productName = removedNumberString[1].split(':')[0]
+        let productName = removedNumberString[1].split(':')[0]
+        productName = productName.replace(' " ', "")
         productsObject[i].productName = productName
         const productDescription = removedNumberString[1].split(':')[1].split(`${i+1}`)[0].trim()
         productsObject[i].productDescription = productDescription 
@@ -69,7 +64,7 @@ app.post('/products', async (req, res) => {
     for (let i=1; i<Object.keys(productsObject).length + 1; i++) {
 
         const params = {
-            api_key: config.get('giftr_rainforestApiKey'),
+            api_key: process.env.RAINFOREST_API_KEY,
             type: 'search',
             amazon_domain: 'amazon.com',
             search_term: productsObject[i].productName,
@@ -78,20 +73,20 @@ app.post('/products', async (req, res) => {
 
         const products = await axios.get('https://api.rainforestapi.com/request', { params })
 
-        const selectedProduct = products.data.search_results.find(productData => {
+        const selectedProduct = products.data.search_results.find(product => {
 
             return ( 
-                productData.is_prime &&
-                productData.rating >= 4.5 && 
-                productData.ratings_total >= 1000 &&
-                productData.price.value !== undefined
+                product.is_prime &&
+                product.rating >= 4.5 && 
+                product.ratings_total >= 1000 &&
+                product.price.value !== undefined
             )
         })
 
         productsObject[i].productInfo = selectedProduct
     }
 
-    
+    sendEmail(firstName, email, productsObject)
     
     res.send(productsObject)
     

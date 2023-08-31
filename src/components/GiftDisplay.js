@@ -7,9 +7,9 @@ import ProductCard from './ProductCard';
 
 function GiftDisplay({productsObject}) {
 
-    const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
+    console.log(productsObject)
 
-    console.log(productsObject[2])
+    const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
     const productCards = []
     const generateProductCards = () => {

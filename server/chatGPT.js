@@ -1,10 +1,12 @@
 import OpenAI from "openai";
 
-import config from 'config'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const openai = new OpenAI({
-    apiKey: config.get('giftr_openAIApiKey')
+    apiKey: process.env.OPENAI_API_KEY
 })
+
 
 const getListResults = async (question) => {
     const chatCompletion = await openai.chat.completions.create({
