@@ -2,7 +2,14 @@ import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
 
+import config from 'config'
+
 import { getListResults } from '../server/chatGPT.js'
+
+if (!config.get('giftr_openAIApiKey') || !config.get('giftr_rainforestApiKey')) {
+    console.error('API KEYS NOT SET')
+    process.exit(1)
+}
 
 const app = express()
 const PORT = 5000
@@ -62,7 +69,7 @@ app.post('/products', async (req, res) => {
     for (let i=1; i<Object.keys(productsObject).length + 1; i++) {
 
         const params = {
-            api_key: '0E7917BB8B6E4216BBBE548F3E664100',
+            api_key: config.get('giftr_rainforestApiKey'),
             type: 'search',
             amazon_domain: 'amazon.com',
             search_term: productsObject[i].productName,

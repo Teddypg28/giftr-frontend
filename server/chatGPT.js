@@ -1,7 +1,9 @@
 import OpenAI from "openai";
 
+import config from 'config'
+
 const openai = new OpenAI({
-    apiKey: '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'
+    apiKey: config.get('giftr_openAIApiKey')
 })
 
 const getListResults = async (question) => {
