@@ -2,15 +2,18 @@ import nodemailer from 'nodemailer'
 import fs from 'fs'
 import Handlebars from 'handlebars'
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 const sendEmail = (name, email, productsObject) => {
 
-    const businessEmail = 'teddypg02@gmail.com'
+    const businessEmail = 'support@usegiftr.com'
 
     const transport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: businessEmail,
-            pass: 'hrvsexflzcjrcvsz',
+            pass: process.env.GMAIL_AUTH_KEY
         }
     })
 
