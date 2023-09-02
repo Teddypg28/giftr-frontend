@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../Welcome.css'
+import '../css/Welcome.css'
 
 import Modal from 'react-modal';
 import Menu from './Menu';
@@ -42,7 +42,7 @@ function Welcome({setStartSurvey}) {
         <>
             <Modal isOpen={aboutModalVisible}>
                 <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
-                {!windowSizeQuery && <img alt='' className='modalImage' src={require('../gift.png')} /> }
+                {!windowSizeQuery && <img alt='' className='modalImage' src={require('../images/gift.png')} /> }
                 <h1 className='modalHeading'>What We Do</h1>
                 <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
                     Gift shopping can sometimes <strong>be way more of a headache than it has to be.</strong> When the ideas aren't churning, instead of being a fun activity,
@@ -58,7 +58,7 @@ function Welcome({setStartSurvey}) {
             </Modal>
             <Modal isOpen={disclosureModalVisible}>
                 <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
-                {!windowSizeQuery && <img alt='' className='modalImage' src={require('../shoppingBag.png')} />}
+                {!windowSizeQuery && <img alt='' className='modalImage' src={require('../images/shoppingBag.png')} />}
                 <h1 className='modalHeading'>Affiliate Disclosure</h1>
                 <p className={windowSizeQuery ? 'modalParaMobile' : 'modalPara'}>
                     If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
@@ -76,25 +76,25 @@ function Welcome({setStartSurvey}) {
             </div>
             }
             <div className='container'>
-                {!windowSizeQuery && <img src={require('../cornerPicThree.png')} alt='' className='cornerPicThree' />}
-                {!windowSizeQuery && <img src={require('../cornerPicTwo.png')} alt='' className='cornerPicTwo' />}
+                {!windowSizeQuery && <img src={require('../images/cornerPicThree.png')} alt='' className='cornerPicThree' />}
+                {!windowSizeQuery && <img src={require('../images/cornerPicTwo.png')} alt='' className='cornerPicTwo' />}
                 <div className='cornerPicOne'></div>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <img className='logo' alt='gift logo' src={require('../giftr-logo.png')} />
+                    <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} />
                 </div>
                 <h2 className={windowSizeQuery ? 'headingMobile' : 'heading'}>Find the Best Gifts on Amazon with AI-Powered Ideas.</h2>
                 <h3 className='welcomeSubheading'>Generate quick gift ideas for any occassion.</h3>
                 <div className={windowSizeQuery ? 'stepsContainerMobile' : 'stepsContainer'}>
                         <div className={windowSizeQuery ? 'stepContainerMobile' : 'stepContainer'}>
-                            <img className='steps' alt='step 1' src={require('../step1.png')} />
+                            <img className='steps' alt='step 1' src={require('../images/step1.png')} />
                             <h1 className={windowSizeQuery? 'stepTextMobile' : 'stepText'}>Tell us a bit about the person you are shopping for.</h1>
                         </div>
                         <div className={windowSizeQuery ? 'stepContainerMobile' : 'stepContainer'}>
-                            <img className='steps' alt='step 1' src={require('../step2.png')} />
+                            <img className='steps' alt='step 1' src={require('../images/step2.png')} />
                             <h1 className={windowSizeQuery? 'stepTextMobile' : 'stepText'}>Wait a few seconds.</h1>
                         </div>
                         <div className={windowSizeQuery ? 'stepContainerMobile' : 'stepContainer'}>
-                            <img className='steps' alt='step 1' src={require('../step3.png')} />
+                            <img className='steps' alt='step 1' src={require('../images/step3.png')} />
                             <h1 className={windowSizeQuery? 'stepTextMobile' : 'stepText'}>Ta-da! Dozens of gift ideas at your fingertips!</h1>
                         </div>
                 </div>

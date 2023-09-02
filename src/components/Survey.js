@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import '../Survey.css'
+import '../css/Survey.css'
 
 import axios from 'axios';
 import validator from 'validator';

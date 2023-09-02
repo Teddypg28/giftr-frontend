@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../../Survey.css'
-
 import { Slider, createTheme, ThemeProvider } from '@mui/material';
 
 function QuestionTwo({ageInputValue, windowSizeQuery, setAgeInputValue, setAge}) {

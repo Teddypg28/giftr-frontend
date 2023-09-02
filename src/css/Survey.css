@@ -218,7 +218,7 @@
 }
 
 .surveyContainer {
-    background-image: url('surveybg.png');
+    background-image: url('../images/surveybg.png');
     background-repeat: no-repeat;
     overflow: hidden;
     height: 100vh;

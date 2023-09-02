@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import '../GiftDisplay.css'
+import '../css/GiftDisplay.css'
 
 import ProductCard from './ProductCard';
 

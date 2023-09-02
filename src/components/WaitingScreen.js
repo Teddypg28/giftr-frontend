@@ -4,8 +4,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import LoadingIcons from 'react-loading-icons'
 
-import '../Survey.css'
-
 function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
