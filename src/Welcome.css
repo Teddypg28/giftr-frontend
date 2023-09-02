@@ -65,7 +65,7 @@
     font-family: Alata;
     text-align: center;
     color: white;
-    font-size: 33px;
+    font-size: 30px;
     margin: auto;
     margin-top: -30px;
     width: fit-content
@@ -209,5 +209,6 @@
     text-align: center;
     color: white;
     font-weight: 200;
+    font-size: 18px;
     font-family: Quicksand;
 }

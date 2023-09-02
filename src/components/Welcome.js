@@ -82,7 +82,7 @@ function Welcome({setStartSurvey}) {
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <img className='logo' alt='gift logo' src={require('../giftr-logo.png')} />
                 </div>
-                <h2 className={windowSizeQuery ? 'headingMobile' : 'heading'}>Find the Best Gifts on Amazon with AI-Powered Ideas</h2>
+                <h2 className={windowSizeQuery ? 'headingMobile' : 'heading'}>Find the Best Gifts on Amazon with AI-Powered Ideas.</h2>
                 <h3 className='welcomeSubheading'>Generate quick gift ideas for any occassion.</h3>
                 <div className={windowSizeQuery ? 'stepsContainerMobile' : 'stepsContainer'}>
                         <div className={windowSizeQuery ? 'stepContainerMobile' : 'stepContainer'}>
