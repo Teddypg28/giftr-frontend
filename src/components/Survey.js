@@ -181,7 +181,7 @@ function Survey() {
       !surveyComplete ? 
         
         <div className={windowSizeQuery ? 'surveyContainerMobile' : 'surveyContainer'}>
-             <h1 style={{marginTop: currentQuestion === 3 && 10, color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
+             <h1 style={{color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>

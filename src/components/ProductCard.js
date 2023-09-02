@@ -1,20 +1,19 @@
 import React from 'react';
 
-import { FaDollarSign } from 'react-icons/fa'
 import { FaAmazon } from 'react-icons/fa'
 
-function ProductCard({cardData}) {
+function ProductCard({cardData, windowSizeQuery}) {
 
     const handleGoToWebsiteClick = (productAsin) => {
        window.open(`http://www.amazon.com/dp/${productAsin}/ref=nosim?tag=giftr05c-20`)
     }
 
     return (
-        <div className='productCardContainer'>
+        <div className={windowSizeQuery ? 'productCardContainerMobile' : 'productCardContainer'}>
             <div className='mainPrimeContainer'>
                { cardData.productInfo.is_prime ? 
                 <div className='primeEligibleContainer'> 
-                    <FaAmazon className='amazonPrimeLogo' /> 
+                    <FaAmazon color='white' className='amazonPrimeLogo' /> 
                     <h2 className='primeEligibleText'>Prime Eligible</h2> 
                 </div> :
                 <div className='primeEligibleContainer'> 
@@ -27,8 +26,7 @@ function ProductCard({cardData}) {
                     <img className='productImage' alt='' src={cardData.productInfo.image} /> 
                 </div>
                 <div className='priceContainer'>
-                    <FaDollarSign color='#373737' size={30} />
-                    <h1 className='price'>{cardData.productInfo.price.value}</h1>
+                    <h1 className='price'>$ {cardData.productInfo.price.value}</h1>
                 </div>
                 <div className='productInfoContainer'>
                     <div className='productHeadingContainer'>

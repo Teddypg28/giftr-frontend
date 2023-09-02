@@ -1,14 +1,6 @@
-const fs = require('fs')
-const Handlebars = require('handlebars')
+const randomIndentifier = `
+            ${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}
+            ${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}
+            `
 
-fs.readFile('/Users/teddypapageorge/giftr/test.html', 'utf-8', (err, data) => {
-    if (err) {
-        console.error(err)
-    } else {
-        const template = Handlebars.compile(data)
-        const info = {"name": "Teddy"}
-        const result = template(info)
-
-        console.log(result)
-    }
-})
+console.log(randomIndentifier)

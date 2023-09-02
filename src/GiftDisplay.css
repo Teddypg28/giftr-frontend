@@ -10,8 +10,9 @@
     width: 90%;
     height: 60px;
     border-radius: 10px;
-    background-color: #A6DFFF;
+    background-color: #38B6FF;
     margin-bottom: 30px;
+    margin-top: -30px;
     cursor: pointer;
 }
 
@@ -45,6 +46,12 @@
     color: #373737;
 }
 
+.giftDisplaySubheader {
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 18px;
+}
+
 .giftDisplayHeaderContainer {
     background-color: white;
     width: fit-content;
@@ -52,6 +59,7 @@
     padding: 20px;
     border-radius: 20px;
     margin-top: 30px;
+    box-shadow: 5px 5px 5px lightgray;
 }
 
 .giftDisplayEmailContainer {
@@ -85,14 +93,14 @@
 .mainGiftDisplayContainer {
     height: 100vh;
     overflow: scroll;
-    background-color: #F6F6F6;
+    background-color: #EDF3F6;
 }
 
 .mainPrimeContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #A6DFFF;
+    background-color: #38B6FF;
     height: 80px;
     width: 380px;
     border-top-left-radius: 10px;
@@ -101,10 +109,8 @@
 
 .productDescriptionContainer {
     width: 310px;
-    height: 115px;
+    height: 100px;
     font-family: Jost;
-    margin-bottom: 10px;
-    margin-top: -100px;
     margin: auto;
 }
 
@@ -116,10 +122,8 @@
 }
 
 .productContainer {
-    height: 695px;
+    height: 630px;
     width: 380px;
-    margin-right: 40px;
-    margin-bottom: 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding-top: 20px;
@@ -142,12 +146,12 @@
     font-weight: 300;
     padding: 40px;
     border-radius: 10px;
-    font-family: Jost;
+    font-family: Quicksand;
     color: #373737;
 }
 
 .productHeadingContainer {
-    height: 120px;
+    height: 80px;
     width: 310px;
     margin-top: 15px;
     display: flex;
@@ -161,7 +165,19 @@
 .productCardContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    height: 710px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 380px;
+    overflow: hidden;
+}
+
+.productCardContainerMobile {
+    width: 380px;
+    height: 800px;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .primeEligibleContainer {
@@ -172,8 +188,9 @@
 }
 
 .primeEligibleText {
-    font-size: 20px;
-    font-family: Jost;
+    font-size: 18px;
+    font-family: Quicksand;
+    color: white;
 }
 
 .priceContainer {
@@ -190,19 +207,24 @@
 }
 
 .price {
-    font-family: Alata;
+    font-family: 'Quicksand';
+    font-weight: 400;
     text-align: center;
     font-size: 30px;
     color: #373737;
 }
 
 .productImage {
-    width: 100%;
+    width: max-content;
+    border-radius: 20px;
     height: 100%;
 }
 
 .productImageContainer {
-    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
     height: 200px;
     border-radius: 10px;
     overflow: hidden;
@@ -212,3 +234,43 @@
     display: flex;
     justify-content: center;
 }
+
+.thankYouMessageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    font-size: 20px;
+    font-family: Quicksand;
+    text-align: center;
+    height: 70px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 5px 5px 5px lightgray
+}
+
+.thankYouMessageContainerMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 280px;
+    margin: auto;
+    font-size: 18px;
+    font-family: Quicksand;
+    text-align: center;
+    height: 70px;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 5px 5px 5px lightgray
+}
+
+.thankYouMessage {
+    font-family: Quicksand
+}
+
+   

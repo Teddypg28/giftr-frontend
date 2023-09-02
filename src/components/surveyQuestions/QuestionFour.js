@@ -58,8 +58,8 @@ function QuestionFour({handleOccasionIconClick, handleOccasionInputChange, occas
                     <img className='occasionIcon' alt='graduation icon' src={require('../../occasion-icons/graduation.png')} />
                     <h3 className='occasionName'>Graduation</h3>
                 </div>
-                <div style={{opacity: occasion !== 'easter' && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("new year's")} className='occasionContainer'>
-                    <img className='occasionIcon' alt='easter icon' src={require('../../occasion-icons/new-years.png')} />
+                <div style={{opacity: occasion !==  "new year's" && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("new year's")} className='occasionContainer'>
+                    <img className='occasionIcon' alt="new year's icon" src={require('../../occasion-icons/new-years.png')} />
                     <h3 className='occasionName'>New Year's</h3>
                 </div>
                 <div style={{opacity: occasion !== "valentine's day" && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("valentine's day")} className='occasionContainer'>

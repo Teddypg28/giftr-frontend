@@ -32,6 +32,9 @@ app.post('/captcha', async (req, res) => {
 })
 
 app.post('/products', async (req, res) => {
+
+    const numOfProducts = 12
+
     const userData = req.body
     const { age, gender, interests, occasion, firstName, email } = userData
     let interestsString = ''
@@ -51,7 +54,7 @@ app.post('/products', async (req, res) => {
         interestsString = interests[0]
     }
     
-    const chatGPTRequestMessage = `Please create a list of 5 cool ${occasion} gift ideas that can be found on Amazon for a ${age} year old ${gender} who enjoys ${interestsString} with a 1 sentence description for each idea.
+    const chatGPTRequestMessage = `Please create a list of ${numOfProducts} ${occasion} Amazon best selling gift ideas for a ${age} year old ${gender} who enjoys ${interestsString} with a 1 sentence description for each idea.
     Please do not include any Amazon links and please separate the idea and description with a colon`
     
     const list = await getListResults(chatGPTRequestMessage)
@@ -60,11 +63,11 @@ app.post('/products', async (req, res) => {
 
     const productsObject = {}
 
-    for (let i = 1; i<6; i++) {
+    for (let i = 1; i<numOfProducts + 1; i++) {
         productsObject[i] = {}
     }
 
-    for (let i = 1; i<6; i++) {
+    for (let i = 1; i<numOfProducts + 1; i++) {
         const removedNumberString = reformattedList.split(`${i}. `)
         let productName = removedNumberString[1].split(':')[0]
         productName = productName.replace(' " ', "")
@@ -88,14 +91,28 @@ app.post('/products', async (req, res) => {
         const selectedProduct = products.data.search_results.find(product => {
 
             return ( 
-                product.is_prime &&
                 product.rating >= 4.5 && 
-                product.ratings_total >= 1000 &&
-                product.price.value !== undefined
+                product.ratings_total >= 1000
             )
         })
 
-        productsObject[i].productInfo = selectedProduct
+        if (!selectedProduct) {
+            const selectedProductTwo = products.data.search_results.find(product => {
+
+                return ( 
+                    product.rating >= 4.5 && 
+                    product.ratings_total >= 200
+                )
+            })
+
+            productsObject[i].productInfo = selectedProductTwo
+
+
+        } else {
+
+            productsObject[i].productInfo = selectedProduct
+        }
+
     }
 
     sendEmail(firstName, email, productsObject)

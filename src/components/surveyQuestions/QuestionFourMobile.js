@@ -66,7 +66,7 @@ function QuestionFourMobile({handleOccasionIconClick, handleOccasionInputChange,
                 </div>
             </div>
             <div className='occasionsRowMobile'>
-                <div style={{opacity: occasion !== 'easter' && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("new year's")} className='occasionContainer'>
+                <div style={{opacity: occasion !== "new year's" && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("new year's")} className='occasionContainer'>
                     <img className='occasionIcon' alt="new year's icon" src={require('../../occasion-icons/new-years.png')} />
                     <h3 className='occasionName'>New Year's</h3>
                 </div>

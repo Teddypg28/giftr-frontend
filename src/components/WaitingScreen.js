@@ -10,7 +10,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
-    const messageArray = ['Searching Now...This May Take A Minute', 'Almost Done...', 'Finished!']
+    const messageArray = ['Searching Now...Please Give Us 1-2 Minutes', 'Almost Done...', 'Finished!']
 
     const [currentRender, setCurrentRender] = useState(0)
 
@@ -20,7 +20,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         setTimeout(() => {
             currentMessage.current = messageArray[currentRender]
             setCurrentRender(2)
-        }, 30000)
+        }, 90000)
     } else if (currentRender === 2 && isRequestSuccessful) {
         setTimeout(() => {
             currentMessage.current = messageArray[currentRender]
@@ -44,6 +44,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
         <div className='waiting'>
             <h1>{currentMessage.current}</h1>
+            <p>Feel free to come back in a few minutes. Just don't close the browser</p>
             <LoadingIcons.ThreeDots stroke='#38B6FF' />
         </div>
 

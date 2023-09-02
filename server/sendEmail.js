@@ -33,10 +33,17 @@ const sendEmail = (name, email, productsObject) => {
 
             const filledOutEmail = emailTemplate(emailData) 
 
+            const randomIndentifier = `${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}`
+
             const mailOptions = {
-                from: 'Your Gift Idea List',
+                from: businessEmail,
                 to: email,
-                subject: `Here's Your Saved Gift Idea List, ${name}`,
+                subject: `Here's Your Saved Gift Idea List, ${name}! (#${randomIndentifier})`,
+                attachments: [{
+                    filename: 'giftr-logo-withBg.png',
+                    path: '/Users/teddypapageorge/giftr/server/giftr-logo-withBg.png',
+                    cid: 'logo'
+                }],
                 html: filledOutEmail
             }
 
