@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 import '../Welcome.css'
 
 import Modal from 'react-modal';
+import Menu from './Menu';
 
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { AiOutlineMenu } from 'react-icons/ai'
-
 import { useMediaQuery } from 'react-responsive';
-import Menu from './Menu';
 
 function Welcome({setStartSurvey}) {
 
@@ -77,12 +76,14 @@ function Welcome({setStartSurvey}) {
             </div>
             }
             <div className='container'>
+                {!windowSizeQuery && <img src={require('../cornerPicThree.png')} alt='' className='cornerPicThree' />}
+                {!windowSizeQuery && <img src={require('../cornerPicTwo.png')} alt='' className='cornerPicTwo' />}
                 <div className='cornerPicOne'></div>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <img className='logo' alt='gift logo' src={require('../giftr-logo.png')} />
                 </div>
                 <h2 className={windowSizeQuery ? 'headingMobile' : 'heading'}>Find the Best Gifts with AI-Powered Gift Shopping.</h2>
-                <h3 style={{textAlign: 'center', color: 'white', fontWeight: 200}}>Generate quick gift ideas for any occassion.</h3>
+                <h3 className='welcomeSubheading'>Generate quick gift ideas for any occassion.</h3>
                 <div className={windowSizeQuery ? 'stepsContainerMobile' : 'stepsContainer'}>
                         <div className={windowSizeQuery ? 'stepContainerMobile' : 'stepContainer'}>
                             <img className='steps' alt='step 1' src={require('../step1.png')} />

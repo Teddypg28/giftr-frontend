@@ -18,9 +18,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: lightcoral;
+    background-color: #121212;
     color: white;
     margin-top: 15px;
+}
+
+.captchaContainer {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px
 }
 
 .emailNameContainer {
@@ -33,28 +39,36 @@
 .interestTextArea {
     width: 600px;
     height: 300px;
-    font-family: Alata;
-    font-size: 25px;
+    font-family: Quicksand;
+    font-size: 23px;
     padding: 10px;
+    border: 3px solid #38B6FF;
+    border-radius: 5px;
+    resize: none;
 }
 
 .interestTextAreaMobile {
     width: 330px;
     height: 300px;
-    font-family: Alata;
+    font-family: Quicksand;
     font-size: 20px;
     padding: 10px;
+    border: 3px solid #38B6FF;
+    border-radius: 5px;
+    resize: none;
 }
 
 .interestSubheading {
     text-align: center;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 22px;
+    font-family: Quicksand;
 }
 
 .interestSubheadingContainer {
     margin-bottom: -30px;
     margin-top: -30px;
+    width: 600px;
 }
 
 .mainContainer {
@@ -120,7 +134,9 @@
 }
 
 .occasionName {
+    font-family: Quicksand;
     font-weight: 300;
+    font-size: 18px;
 }
 
 .occasionsRow {
@@ -152,7 +168,7 @@
     border: 2px solid #38B6FF;
     border-radius: 10px;
     font-size: 18px;
-    font-family: Alata;
+    font-family: Quicksand;
 }
 
 .outerRangeContainer {
@@ -171,8 +187,7 @@
     font-family: Alata;
     font-size: 35px;
     text-align: center;
-    margin-top: 35px;
-    color: #FF6060;
+    margin-top: 35px
 }
 
 .questionContainer {

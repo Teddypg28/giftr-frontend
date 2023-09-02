@@ -37,6 +37,21 @@
     border-radius: 50%
 }
 
+.cornerPicTwo {
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    right: 150px;
+    top: 350px;
+    opacity: 95%;
+}
+
+.cornerPicThree {
+    position: absolute;
+    left: 0px;
+    top: 400px;
+}
+
 .heading {
     font-family: Alata;
     text-align: center;
@@ -188,4 +203,11 @@
 .stepsContainerMobile {
     margin-top: 30px;
     margin-bottom: 50px;
+}
+
+.welcomeSubheading {
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    font-family: Quicksand;
 }

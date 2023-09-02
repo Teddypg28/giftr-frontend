@@ -19,6 +19,18 @@ app.get('/', (req, res) => {
     res.send(`Welcome to PORT ${PORT}`)
 })
 
+app.post('/captcha', async (req, res) => {
+
+    const requestData = req.body
+
+    const { token } = requestData
+
+    const result = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_SECRET_KEY}&response=${token}`)
+
+    res.send(result.data)
+
+})
+
 app.post('/products', async (req, res) => {
     const userData = req.body
     const { age, gender, interests, occasion, firstName, email } = userData

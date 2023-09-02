@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+
 import { useMediaQuery } from 'react-responsive';
+
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import '../Survey.css'
 
@@ -17,18 +20,19 @@ import GetEmail from './surveyQuestions/GetEmail';
 
 function Survey() {
 
+    const recaptchaValue = useRef(null)
+
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
-    const [isFirstRender, setIsFirstRender] = useState(true)
-    const [allFree, setAllFree] = useState(true)
 
-    const [isFirstGenderRender, setIsFirstGenderRender] = useState(true)
+    const [isFirstOccasionRender, setIsFirstOccasionRender] = useState(true)
     const [surveyComplete, setSurveyComplete] = useState(false)
     const [isDoneWaiting, setIsDoneWaiting] = useState(false)
     const [isRequestSuccessful, setIsRequestSuccessful] = useState(null)
     const [error, setError] = useState('')
+    const [invalidCaptcha, setInvalidCaptcha] = useState(false)
 
     const [age, setAge] = useState(0)
     const [gender, setGender] = useState('')
@@ -41,18 +45,16 @@ function Survey() {
     const [productsObject, setProductsObject] = useState({})
 
     const handleOccasionIconClick = (name) => {
-        setIsFirstRender(false)
-        if(name === occasion) {
-            setOccasion('')
-            setAllFree(true)
-        } else {
-            setOccasionInputValue('')
-            setOccasion(name)
-            setAllFree(false)
-        }
+        setOccasion(name)
+        setIsFirstOccasionRender(false)
+        setOccasionInputValue('')
+        setTimeout(() => {
+            setCurrentQuestion(currentQuestion + 1)
+        }, 500);
     }
 
     const handleOccasionInputChange = (e) => {
+        setIsFirstOccasionRender(false)
         setOccasion('')
         setOccasionInputValue(e.target.value)
     }
@@ -66,35 +68,22 @@ function Survey() {
     }
 
     const handleGenderClick = (gender) => {
-        setIsFirstGenderRender(false)
         setGender(gender)
+        setTimeout(() => {
+            setCurrentQuestion(currentQuestion + 1)
+        }, 500);
     }
 
     const findGifts = async () => {
-            if (firstName === '') {
-                setError('Please enter both your first name and email address')
-                setTimeout(() => {
-                    setError('')
-                }, 3000);
-            }
-             else {
-
-                if (!validator.isEmail(email)) {
-                    setError('Please enter a valid email address so we can send you your gift ideas!')
-                setTimeout(() => {
-                    setError('')
-                    }, 4000);
-                } else {
-
-                const answersObject = {
-                    age,
-                    gender,
-                    interests: interests.split(', '),
-                    occasion: occasionInputValue === '' ? occasion : occasionInputValue,
-                    firstName, 
-                    email
-                }
         
+           const answersObject = {
+                age,
+                gender,
+                interests: interests.split(', '),
+                occasion: occasionInputValue === '' ? occasion : occasionInputValue,
+                firstName, 
+                email
+            }
                 try {
                     setSurveyComplete(true)
                     const res = await axios.post('http://localhost:5000/products', answersObject)
@@ -107,56 +96,84 @@ function Survey() {
                     console.log(error)
                 }
             }
-        }
-        }
-
-    const questionOptions = {
-        1:  <QuestionOne handleGenderClick={handleGenderClick} gender={gender} isFirstGenderRender={isFirstGenderRender} />,
-        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} windowSizeQuery={windowSizeQuery} />,
-        3:  <QuestionThree interests={interests} setInterests={setInterests} windowSizeQuery={windowSizeQuery} />,
-        4:  windowSizeQuery ? 
-            <QuestionFourMobile occasionInputValue={occasionInputValue} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
-            <QuestionFour occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} allFree={allFree} isFirstRender={isFirstRender} occasion={occasion} handleOccasionIconClick={handleOccasionIconClick}/>,
-        5: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
-    }
-        
-    const handleNextBtnClick = () => {
-     if (currentQuestion === 1 && gender === '') {
-        setError('Please select a gender')
-        setTimeout(() => {
-            setError('')
-        }, 1500);
-    } else if (currentQuestion === 2 && (ageInputValue === 0 || ageInputValue === '')) {
-        setError('Please enter a valid age')
-        setTimeout(() => {
-            setError('')
-        }, 1500);
-    }
-        else if (currentQuestion === 3 && interests.trim() === '') {
-            setError('Please enter a couple of interests')
-            setTimeout(() => {
-                setError('')
-            }, 2500);
-        } else if (currentQuestion === 4 && occasion === '' && occasionInputValue === '') {
-            setError('Please select an occasion')
+  
+            
+        const handleNextBtnClick = () => {
+            if (currentQuestion === 2 && (ageInputValue === 0 || ageInputValue === '')) {
+            setError('Please enter a valid age')
             setTimeout(() => {
                 setError('')
             }, 1500);
-        } 
-        else {
-            currentQuestion !== 5 && setCurrentQuestion(currentQuestion + 1)
         }
-    }
+            else if (currentQuestion === 3 && interests.trim() === '') {
+                setError('Please enter a couple of interests')
+                setTimeout(() => {
+                    setError('')
+                }, 2500);
+            } else if (currentQuestion === 4 && occasion === '' && occasionInputValue === '') {
+                setError('Please select an occasion')
+                setTimeout(() => {
+                    setError('')
+                }, 1500);
+            } 
+            else {
+                currentQuestion !== 5 && setCurrentQuestion(currentQuestion + 1)
+            }
+        }
+        
+        const handleBackBtnClick = () => {
+            currentQuestion !== 1 && setCurrentQuestion(currentQuestion - 1)
+        }
+        
+        const validateSubmission = async () => {
+            if (firstName === '') {
+                setError('Please enter both your first name and email address')
+                setTimeout(() => {
+                    setError('')
+                }, 3000);
+            }
+             else {
+        
+                if (!validator.isEmail(email)) {
+                    setError("Whoops! That isn't a valid email address.")
+                setTimeout(() => {
+                    setError('')
+                    }, 4000);
+                }
+        
+            const token = recaptchaValue.current.getValue()
+            if (token === "") {
+                setInvalidCaptcha(true)
+                setTimeout(() => {
+                    setInvalidCaptcha(false)
+                }, 2000);
+            } else {
+                const captchaData = { token }
+                recaptchaValue.current.reset()
+                const res = await axios.post('http://localhost:5000/captcha', captchaData)
 
-    const handleBackBtnClick = () => {
-        currentQuestion !== 1 && setCurrentQuestion(currentQuestion - 1)
+                if (res.data.success) {
+                    findGifts()
+                }
+            }
+        }
+        
+        }
+    const questionOptions = {
+        1:  <QuestionOne handleGenderClick={handleGenderClick} gender={gender} />,
+        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} windowSizeQuery={windowSizeQuery} />,
+        3:  <QuestionThree interests={interests} setInterests={setInterests} windowSizeQuery={windowSizeQuery} />,
+        4:  windowSizeQuery ? 
+            <QuestionFourMobile isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
+            <QuestionFour isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} handleOccasionIconClick={handleOccasionIconClick}/>,
+        5: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
     }
 
     const questions = {
         1: 'What is his or her gender?',
         2: `What is ${gender === 'male' ? 'his' : 'her'} age?`, 
         3: `What are some interests that ${gender === 'male' ? 'he' : 'she'} has?`,
-        4: 'What is the special occasion?',
+        4: "What's the special occasion?",
         5: 'Where should we send your gift list to?'
     }
 
@@ -164,16 +181,22 @@ function Survey() {
       !surveyComplete ? 
         
         <div className={windowSizeQuery ? 'surveyContainerMobile' : 'surveyContainer'}>
-             <h1 style={{marginTop: currentQuestion === 3 && 10}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
+             <h1 style={{marginTop: currentQuestion === 3 && 10, color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>
             {currentQuestion === 5 && 
-            <div onClick={findGifts} className='nextBtn'>
-                <h3>Find Me Gifts</h3>
-            </div>
+            <>
+                <div className='captchaContainer'>
+                    <ReCAPTCHA ref={recaptchaValue} sitekey='6Ld2x_EnAAAAAHq2tHUyFCXaGcsfGdU4cnFEarM0' />
+                    {invalidCaptcha && <p style={{color: 'red', fontFamily: 'Quicksand', textAlign: 'center'}}>Invalid Captcha</p>}
+                </div>
+                <div onClick={validateSubmission} className='nextBtn'>
+                    <h3>Search for Gifts</h3>
+                </div>
+            </>
             }
-            {currentQuestion !== 5 && 
+            {currentQuestion !== 5 && currentQuestion !== 1 &&
             <div onClick={handleNextBtnClick} className='nextBtn'>
                 <h3>Next</h3>
             </div>}
