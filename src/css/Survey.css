@@ -80,7 +80,6 @@
     font-family: Quicksand;
 }
 
-
 .interestSubheadingContainer {
     margin-bottom: -30px;
     margin-top: -30px;
@@ -236,7 +235,7 @@
 .surveyContainer {
     background-image: url('../images/surveybg.png');
     background-repeat: no-repeat;
-    overflow: scroll;
+    overflow: hidden;
     height: 100vh;
 }
 

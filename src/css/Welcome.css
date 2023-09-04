@@ -228,8 +228,7 @@
     flex-direction: column;
     width: fit-content; 
     height: fit-content;
-    margin: auto;
-    margin-top: 20;
+    margin: 0px auto;
 }
 
 .stepsContainerMobile {
