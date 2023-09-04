@@ -20,13 +20,6 @@
     cursor: pointer;
 }
 
-.container {
-    background-color: #121212; 
-    height: 100vh;
-    width: 100vw;
-    padding: 0
-}
-
 .cornerPicOne {
     height: 50%;
     width: 30%;
@@ -39,25 +32,37 @@
 
 .cornerPicTwo {
     position: absolute;
-    height: 300px;
-    width: 400px;
-    right: 150px;
+    height: 250px;
+    width: fit-content;
+    right: 70px;
     top: 350px;
     opacity: 95%;
 }
 
 .cornerPicThree {
     position: absolute;
-    left: 0px;
-    top: 400px;
+    top: 330px;
+    left: 70px;
+    height: 350px;
+    width: fit-content
 }
 
-.heading {
+.headingMonitor {
     font-family: Alata;
     text-align: center;
     color: white;
     font-size: 40px;
     margin: auto;
+    width: fit-content
+}
+
+.headingTablet {
+    font-family: Alata;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    margin: auto;
+    margin-top: -30px;
     width: fit-content
 }
 
@@ -71,10 +76,18 @@
     width: fit-content
 }
 
-.headerLinksContainer {
+.headerLinksContainerMonitor {
     position: absolute;
     top: 80px;
     right: 280px;
+    display: flex;
+    gap: 40px
+}
+
+.headerLinksContainerTablet {
+    position: absolute;
+    top: 80px;
+    right: 100px;
     display: flex;
     gap: 40px
 }
@@ -89,23 +102,41 @@
 .logo {
     height: 200px;
     width: 200px;
-    text-align: center
+    text-align: center;
 }
 
-.modalImage {
+.mainWelcomeContainerTablet {
+    background-color: #121212; 
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainWelcomeContainerMobile {
+    background-color: #121212; 
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+}
+
+.modalImageMonitor {
     position: absolute;
-    height: 350px;
+    height: 250px;
+}
+
+.modalImageTablet {
+    position: absolute;
+    height: 230px;
 }
 
 .modalHeading {
     font-family: Alata;
     text-align: center;
     color: #38B6FF;
-    font-size: 45px;
+    font-size: 40px;
 }
 
-.modalPara {
-    font-size: 24px;
+.modalParaMonitor, .modalParaTablet {
+    font-size: 20px;
     text-align: center;
     width: 50%;
     font-family: Jost;
@@ -116,7 +147,11 @@
 
 .modalParaMobile {
     text-align: center;
-    font-size: 18px;
+    width: 80%;
+    margin: auto;
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 30px;
     font-family: Jost;
 }
 
@@ -138,6 +173,7 @@
     border-bottom: 2px solid #38B6FF;
     font-size: 30px;
     font-family: Jost;
+    cursor: pointer;
 }
 
 .menuContainer {
@@ -157,18 +193,11 @@
     margin-top: 80px;
 }
 
-.stepContainer {
+.stepContainerMonitor, .stepContainerTablet {
     display: flex;
     align-items: center;
-    width: 80%;
     margin-bottom: 0px;
-    margin: auto
-}
-
-.stepContainerMobile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    width: 80%;
     margin: auto
 }
 
@@ -179,25 +208,28 @@
     display: inline-block
 }
 
-.stepTextMobile {
+.stepTextTablet {
     color: white;
-    font-size: 17px;
+    font-size: 18px;
     font-family: Alata;
     display: inline-block
 }
 
-.steps {
-    height: 100%;
-    width: 20%
+.stepsMonitor, .stepsTablet {
+    width: 22%
 }
 
-.stepsContainer {
+.stepsMobile {
+    width: 7.5rem;
+}
+
+.stepsContainerMonitor, .stepsContainerTablet {
     display: flex;
     flex-direction: column;
     width: fit-content; 
     height: fit-content;
     margin: auto;
-    margin-top: 20
+    margin-top: 20;
 }
 
 .stepsContainerMobile {

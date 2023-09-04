@@ -6,7 +6,7 @@ import { FaMale } from 'react-icons/fa'
 function QuestionOne({handleGenderClick, gender}) {
 
     return (
-        <div className='questionTwoContainer'>
+        <div className='questionOneContainer'>
             <div onClick={() => handleGenderClick('male')} className='male' style={{backgroundColor: '#9ADAFF', opacity: gender === 'female' && '20%'}}>
                 <FaMale size={100} color='white' />
             </div>

@@ -9,7 +9,7 @@ function QuestionThree({windowSizeQuery, interests, setInterests}) {
     return (
         <>
             <div className='interestSubheadingContainer' style={{width: windowSizeQuery && '395px'}}>
-                <h3 className='interestSubheading'>
+                <h3 className={windowSizeQuery ? 'interestSubheadingMobile' : 'interestSubheading'}>
                     Try to come up with at least 3 - 5 interests, or more if you can. Make sure to <strong>separate each one with a comma.</strong>
                 </h3>
             </div>

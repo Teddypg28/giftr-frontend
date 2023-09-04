@@ -22,7 +22,7 @@ function Survey() {
 
     const recaptchaValue = useRef(null)
 
-    const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
+    const windowSizeQuery = useMediaQuery({query: '(max-width: 1224px)'})
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
