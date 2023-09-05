@@ -2,7 +2,7 @@
     background-color: #38B6FF;
     cursor: pointer;
     width: 20rem;
-    height: 4rem;
+    height: 3.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
     color: white;
     font-size: 10px;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 10px;
     font-family: Alata
 }
 
@@ -70,9 +70,9 @@
     font-family: Alata;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     margin: auto;
-    margin-top: -30px;
+    margin-top: -40px;
     width: fit-content
 }
 
@@ -103,6 +103,7 @@
     height: 200px;
     width: 200px;
     text-align: center;
+    margin-top: -10px;
 }
 
 .mainWelcomeContainerTablet {
@@ -149,7 +150,7 @@
     text-align: center;
     width: 80%;
     margin: auto;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 30px;
     margin-top: 30px;
     font-family: Jost;
@@ -158,7 +159,7 @@
 .menuIcon {
     position: absolute;
     right: 30px;
-    top: 85px;
+    top: 75px;
     cursor: pointer;
 }
 
@@ -210,7 +211,7 @@
 
 .stepTextTablet {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-family: Alata;
     display: inline-block
 }
@@ -220,7 +221,7 @@
 }
 
 .stepsMobile {
-    width: 7.5rem;
+    width: 6.8rem;
 }
 
 .stepsContainerMonitor, .stepsContainerTablet {
@@ -236,10 +237,18 @@
     margin-bottom: 50px;
 }
 
-.welcomeSubheading {
+.welcomeSubheadingMonitor {
     text-align: center;
     color: white;
     font-weight: 200;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: Quicksand;
+}
+
+.welcomeSubheadingMobile {
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
     font-family: Quicksand;
 }

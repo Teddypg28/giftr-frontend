@@ -88,7 +88,7 @@ function Welcome({setStartSurvey}) {
                     }
                 </div>
                     <h2 className={monitorSize ? 'headingMonitor' : tabletSize ? 'headingTablet' : 'headingMobile'}>Find the Best Gifts on Amazon with AI-Powered Ideas.</h2>
-                    <h3 className='welcomeSubheading'>Generate quick gift ideas for any occassion.</h3>
+                    <h3 className={(tabletSize || monitorSize) ? 'welcomeSubheadingMonitor' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
                     <div className={monitorSize ? 'stepsContainerMonitor' : 'stepsContainerTablet'}>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
                                 <img className={monitorSize ? 'stepsMonitor' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step1.png')} />
