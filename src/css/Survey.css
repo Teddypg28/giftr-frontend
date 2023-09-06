@@ -17,6 +17,7 @@
     margin: auto;
     margin-bottom: 20px;
     justify-content: center;
+    font-family: Jost;
     align-items: center;
     border-radius: 10px;
     background-color: #121212;
@@ -130,6 +131,7 @@
     background-color: #38B6FF;
     color: white;
     cursor: pointer;
+    font-family: Jost;
     margin-top: 30px;
 }
 
@@ -190,13 +192,13 @@
 }
 
 .question {
-    font-family: Alata;
+    font-family: Quicksand;
     text-align: center;
     margin-top: 35px;
 }
 
 .questionError {
-    font-family: Alata;
+    font-family: Quicksand;
     font-size: 35px;
     text-align: center;
     margin-top: 35px
