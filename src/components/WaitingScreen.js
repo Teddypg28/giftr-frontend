@@ -35,14 +35,14 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         isRequestSuccessful === false ? 
          
         <div className={windowSizeQuery ? 'waitingMobile' : 'waiting'}>
-            <h1>Sorry, something went wrong on our end. Please try again in a bit!</h1>
+            <h1 className='waitingSubheading'>Sorry, something went wrong on our end. Please try again in a bit!</h1>
         </div>
 
         :
 
         <div className='waiting'>
-            <h1>{currentMessage.current}</h1>
-            <p className='waitingSubheading'>Feel free to come back in a few minutes. Just don't close the browser.</p>
+            <h1 style={{fontSize: '25px'}}>{currentMessage.current}</h1>
+            <p className='waitingSubheading'>Please do not close the browser.</p>
             <LoadingIcons.ThreeDots stroke='#38B6FF' />
         </div>
 
