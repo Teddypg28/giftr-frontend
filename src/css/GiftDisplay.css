@@ -18,7 +18,7 @@
 
 .goToWebsiteBtnText {
     font-size: 20px;
-    font-family: Alata;
+    font-family: Montserrat;
     color: white;
 }
 
@@ -41,14 +41,14 @@
 }
 
 .giftDisplayHeader {
-    font-family: Alata;
+    font-family: Montserrat;
     text-align: center;
     color: #373737;
 }
 
 .giftDisplaySubheader {
     text-align: center;
-    font-family: Quicksand;
+    font-family: Montserrat;
     font-size: 18px;
 }
 
@@ -110,7 +110,7 @@
 .productDescriptionContainer {
     width: 310px;
     height: 100px;
-    font-family: Jost;
+    font-family: Montserrat;
     margin: auto;
 }
 
@@ -146,7 +146,7 @@
     font-weight: 300;
     padding: 40px;
     border-radius: 10px;
-    font-family: Quicksand;
+    font-family: Montserrat;
     color: #373737;
 }
 
@@ -189,7 +189,7 @@
 
 .primeEligibleText {
     font-size: 18px;
-    font-family: Quicksand;
+    font-family: Montserrat;
     color: white;
 }
 
@@ -207,7 +207,7 @@
 }
 
 .price {
-    font-family: 'Quicksand';
+    font-family: Montserrat;
     font-weight: 400;
     text-align: center;
     font-size: 30px;
@@ -243,7 +243,7 @@
     width: 500px;
     margin: auto;
     font-size: 20px;
-    font-family: Quicksand;
+    font-family: Montserrat;
     text-align: center;
     height: 70px;
     padding: 40px;
@@ -260,7 +260,7 @@
     width: 280px;
     margin: auto;
     font-size: 18px;
-    font-family: Quicksand;
+    font-family: Montserrat;
     text-align: center;
     height: 70px;
     padding: 50px;
@@ -270,7 +270,7 @@
 }
 
 .thankYouMessage {
-    font-family: Quicksand
+    font-family: Montserrat
 }
 
    

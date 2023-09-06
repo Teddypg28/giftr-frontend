@@ -26,7 +26,7 @@ function ProductCard({cardData, windowSizeQuery}) {
                     <img className='productImage' alt='' src={cardData.productInfo.image} /> 
                 </div>
                 <div className='priceContainer'>
-                    <h1 className='price'>$ {cardData.productInfo.price.value}</h1>
+                    <h1 className='price'>${cardData.productInfo.price.value.toFixed(2)}</h1>
                 </div>
                 <div className='productInfoContainer'>
                     <div className='productHeadingContainer'>

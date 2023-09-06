@@ -7,6 +7,8 @@ import ProductCard from './ProductCard';
 
 function GiftDisplay({productsObject}) {
 
+    console.log(productsObject)
+
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
     const productCards = []
@@ -28,8 +30,7 @@ function GiftDisplay({productsObject}) {
                 {generateProductCards()}
                 <div className={windowSizeQuery ? 'thankYouMessageContainerMobile' : 'thankYouMessageContainer'}>
                     <p className='thankYouMessage'>
-                        Thank you for using Giftr! If you want anything added to the app or 
-                        think we could improve on something, send us an email at <strong>support@usegiftr.com!</strong>
+                        Thank you for using Giftr! Feel free to use it as many times as you wish to get <strong>as many ideas as possible.</strong>
                     </p>
                 </div>
             </div>

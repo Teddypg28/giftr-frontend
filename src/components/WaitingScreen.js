@@ -42,7 +42,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
         <div className='waiting'>
             <h1>{currentMessage.current}</h1>
-            <p>Feel free to come back in a few minutes. Just don't close the browser</p>
+            <p className='waitingSubheading'>Feel free to come back in a few minutes. Just don't close the browser.</p>
             <LoadingIcons.ThreeDots stroke='#38B6FF' />
         </div>
 
