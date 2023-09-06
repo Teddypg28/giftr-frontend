@@ -47,17 +47,16 @@
 }
 
 .headingMonitor {
-    font-family: Alata;
+    font-family: Montserrat;
     text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     margin: auto;
     width: fit-content
 }
 
 .headingTablet {
     font-family: Montserrat;
-    font-weight: 300;
     text-align: center;
     color: white;
     font-size: 35px;
@@ -94,7 +93,7 @@
 
 .headerLink {
     color: white;
-    font-family: Alata;
+    font-family: Montserrat;
     border-bottom: 2px solid #38B6FF;
     cursor: pointer;
 }
@@ -242,15 +241,15 @@
 .welcomeSubheadingMonitor {
     text-align: center;
     color: white;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 20px;
-    font-family: Quicksand;
+    font-family: Montserrat;
 }
 
 .welcomeSubheadingMobile {
     text-align: center;
     color: white;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 15px;
-    font-family: Quicksand;
+    font-family: Montserrat;
 }
