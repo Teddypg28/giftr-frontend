@@ -14,7 +14,7 @@
     cursor: pointer;
     display: flex;
     height: 65px;
-    width: 270px;
+    width: 300px;
     margin: auto;
     margin-bottom: 20px;
     justify-content: center;
@@ -43,7 +43,7 @@
     width: 600px;
     height: 300px;
     font-family: Montserrat;
-    font-size: 23px;
+    font-size: 20px;
     padding: 10px;
     border: 3px solid #38B6FF;
     border-radius: 5px;
@@ -67,7 +67,7 @@
     font-weight: 300;
     font-size: 18px;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
     font-family: Montserrat;
 }
 
@@ -122,7 +122,7 @@
 
 .nextBtn {
     height: 65px;
-    width: 270px;
+    width: 300px;
     margin: auto;
     display: flex;
     justify-content: center;

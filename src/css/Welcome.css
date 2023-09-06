@@ -204,16 +204,16 @@
 .stepText {
     color: white;
     font-size: 17px;
-    font-weight: 200;
-    font-family: Quicksand;
+    font-weight: 300;
+    font-family: Montserrat;
     display: inline-block
 }
 
 .stepTextTablet {
     color: white;
-    font-size: 15px;
-    font-weight: 200;
-    font-family: Quicksand;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: Montserrat;
     display: inline-block
 }
 
