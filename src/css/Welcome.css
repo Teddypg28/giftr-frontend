@@ -8,10 +8,10 @@
     align-items: center;
     border-radius: 10px;
     color: white;
-    font-size: 10px;
+    font-size: 9px;
     margin: auto;
     margin-top: 30px;
-    font-family: Quicksand;
+    font-family: Alata;
 }
 
 .closeBtn {
@@ -130,7 +130,8 @@
 }
 
 .modalHeading {
-    font-family: Alata;
+    font-family: Quicksand;
+    font-weight: 300;
     text-align: center;
     color: #38B6FF;
 }
