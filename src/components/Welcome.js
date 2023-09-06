@@ -87,7 +87,7 @@ function Welcome({setStartSurvey}) {
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: (monitorSize || tabletSize) ? '200px' : '145px', width: (monitorSize || tabletSize) ? '200px' : '145px'}} />
                 </div>
-                    <h2 className={monitorSize ? 'headingMonitor' : tabletSize ? 'headingTablet' : 'headingMobile'} style={{width: mobileSize && '320px'}}>Find the Best Gifts on Amazon with AI-Powered Ideas.</h2>
+                    <h2 className={monitorSize ? 'headingMonitor' : tabletSize ? 'headingTablet' : 'headingMobile'} style={{width: mobileSize && '320px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
                     <h3 className={(tabletSize || monitorSize) ? 'welcomeSubheadingMonitor' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
                     <div className={monitorSize ? 'stepsContainerMonitor' : 'stepsContainerTablet'}>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
