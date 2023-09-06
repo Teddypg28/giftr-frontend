@@ -6,7 +6,8 @@
     border-width: 20px;
     border-color: #38B6FF;
     font-size: 25px;
-    font-family: Alata;
+    font-weight: 300;
+    font-family: Quicksand;
 }
 
 .backBtn {
@@ -17,7 +18,8 @@
     margin: auto;
     margin-bottom: 20px;
     justify-content: center;
-    font-family: Jost;
+    font-family: Quicksand;
+    font-weight: 300;
     align-items: center;
     border-radius: 10px;
     background-color: #121212;
@@ -72,13 +74,13 @@
 
 .interestSubheadingMobile {
     text-align: center;
-    font-weight: 300;
     font-size: 16px;
     width: 360px;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 20px;
     font-family: Quicksand;
+    font-weight: 200;
 }
 
 .interestSubheadingContainer {
@@ -127,11 +129,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-family: Alata;
+    font-family: Quicksand;
+    font-weight: 300;
     background-color: #38B6FF;
     color: white;
     cursor: pointer;
-    font-family: Jost;
     margin-top: 30px;
 }
 
@@ -193,6 +195,7 @@
 
 .question {
     font-family: Quicksand;
+    font-weight: 300;
     text-align: center;
     margin-top: 35px;
 }
