@@ -110,8 +110,6 @@
 }
 
 .male, .female {
-    width: 150px;
-    height: 150px;
     border-radius: 50%;
     background-color: #F4F4F4;
     display: flex;
@@ -193,7 +191,6 @@
 
 .question {
     font-family: Alata;
-    font-size: 35px;
     text-align: center;
     margin-top: 35px;
 }

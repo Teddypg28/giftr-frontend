@@ -23,6 +23,7 @@ function Survey() {
     const recaptchaValue = useRef(null)
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 1224px)'})
+    const mobileSize = useMediaQuery({query: '(max-width: 930px)'})
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
@@ -181,7 +182,7 @@ function Survey() {
       !surveyComplete ? 
         
         <div className={windowSizeQuery ? 'surveyContainerMobile' : 'surveyContainer'}>
-             <h1 style={{color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
+             <h1 style={{color: error ? '#38B6FF' : '#373737', fontSize: mobileSize ? '30px' : '35px'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>
