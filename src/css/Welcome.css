@@ -2,7 +2,6 @@
     background-color: #38B6FF;
     cursor: pointer;
     width: 20rem;
-    height: 3.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +10,7 @@
     font-size: 9px;
     margin: auto;
     margin-top: 30px;
-    font-family: Alata;
+    font-family: Montserrat;
 }
 
 .closeBtn {
@@ -57,7 +56,7 @@
 }
 
 .headingTablet {
-    font-family: Alata;
+    font-family: Montserrat;
     font-weight: 300;
     text-align: center;
     color: white;
@@ -68,7 +67,7 @@
 }
 
 .headingMobile {
-    font-family: Alata;
+    font-family: Montserrat;
     text-align: center;
     color: white;
     font-size: 22px;
@@ -130,8 +129,7 @@
 }
 
 .modalHeading {
-    font-family: Quicksand;
-    font-weight: 300;
+    font-family: Montserrat;
     text-align: center;
     color: #38B6FF;
 }
@@ -140,7 +138,8 @@
     font-size: 20px;
     text-align: center;
     width: 50%;
-    font-family: Jost;
+    font-family: Montserrat;
+    font-weight: 300;
     margin: auto;
     line-height: 50px;
     margin-top: 40px;
@@ -148,12 +147,13 @@
 
 .modalParaMobile {
     text-align: center;
-    width: 80%;
+    width: 85%;
     margin: auto;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 30px;
     margin-top: 30px;
-    font-family: Jost;
+    font-weight: 300;
+    font-family: Montserrat;
 }
 
 .menuIcon {

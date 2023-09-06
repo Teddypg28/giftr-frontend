@@ -10,7 +10,7 @@ function QuestionThree({windowSizeQuery, interests, setInterests}) {
         <>
             <div className='interestSubheadingContainer' style={{width: windowSizeQuery && '395px'}}>
                 <h3 className={windowSizeQuery ? 'interestSubheadingMobile' : 'interestSubheading'}>
-                    Try to come up with at least 3 - 5 interests, or more if you can. Make sure to <strong>separate each one with a comma.</strong>
+                    Try to come up with at least 3 - 5 interests. Make sure to <strong>separate each one with a comma.</strong>
                 </h3>
             </div>
             <textarea className={windowSizeQuery ? 'interestTextAreaMobile' : 'interestTextArea'} value={interests} autoCorrect='on' onChange={handleInterestsChange} placeholder={`Example: working out, bedroom decor, home appliances`}/>

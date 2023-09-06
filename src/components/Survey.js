@@ -141,22 +141,24 @@ function Survey() {
                     setError('')
                     }, 4000);
                 }
-        
-            const token = recaptchaValue.current.getValue()
-            if (token === "") {
-                setInvalidCaptcha(true)
-                setTimeout(() => {
-                    setInvalidCaptcha(false)
-                }, 2000);
-            } else {
-                const captchaData = { token }
-                recaptchaValue.current.reset()
-                const res = await axios.post('http://localhost:5000/captcha', captchaData)
 
-                if (res.data.success) {
-                    findGifts()
+                else {
+                    const token = recaptchaValue.current.getValue()
+                    if (token === "") {
+                        setInvalidCaptcha(true)
+                        setTimeout(() => {
+                            setInvalidCaptcha(false)
+                        }, 2000);
+                    } else {
+                        const captchaData = { token }
+                        recaptchaValue.current.reset()
+                        const res = await axios.post('http://localhost:5000/captcha', captchaData)
+        
+                        if (res.data.success) {
+                            findGifts()
+                        }
+                    }
                 }
-            }
         }
         
         }
@@ -182,7 +184,7 @@ function Survey() {
       !surveyComplete ? 
         
         <div className={windowSizeQuery ? 'surveyContainerMobile' : 'surveyContainer'}>
-             <h1 style={{color: error ? '#38B6FF' : '#373737', fontSize: mobileSize ? '30px' : '35px'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
+             <h1 style={{color: error ? '#38B6FF' : '#373737', fontSize: mobileSize ? '25px' : '35px'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>
@@ -193,7 +195,7 @@ function Survey() {
                     {invalidCaptcha && <p style={{color: 'red', fontFamily: 'Quicksand', textAlign: 'center'}}>Invalid Captcha</p>}
                 </div>
                 <div onClick={validateSubmission} className='nextBtn'>
-                    <h3>Search for Gifts</h3>
+                    <h3>Find Me Gifts</h3>
                 </div>
             </>
             }

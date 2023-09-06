@@ -14,11 +14,11 @@
     cursor: pointer;
     display: flex;
     height: 65px;
-    width: 300px;
+    width: 270px;
     margin: auto;
     margin-bottom: 20px;
     justify-content: center;
-    font-family: Alata;
+    font-family: Montserrat;
     align-items: center;
     border-radius: 10px;
     background-color: #121212;
@@ -42,7 +42,7 @@
 .interestTextArea {
     width: 600px;
     height: 300px;
-    font-family: Quicksand;
+    font-family: Montserrat;
     font-size: 23px;
     padding: 10px;
     border: 3px solid #38B6FF;
@@ -53,7 +53,7 @@
 .interestTextAreaMobile {
     width: 330px;
     height: 300px;
-    font-family: Quicksand;
+    font-family: Montserrat;
     font-size: 20px;
     padding: 10px;
     border: 3px solid #38B6FF;
@@ -68,7 +68,7 @@
     font-size: 18px;
     margin-top: 5px;
     margin-bottom: 20px;
-    font-family: Quicksand;
+    font-family: Montserrat;
 }
 
 .interestSubheadingMobile {
@@ -78,8 +78,8 @@
     margin: auto;
     margin-top: 5px;
     margin-bottom: 20px;
-    font-family: Quicksand;
-    font-weight: 200;
+    font-family: Montserrat;
+    font-weight: 300;
 }
 
 .interestSubheadingContainer {
@@ -122,13 +122,13 @@
 
 .nextBtn {
     height: 65px;
-    width: 300px;
+    width: 270px;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-family: Alata;
+    font-family: Montserrat;
     background-color: #38B6FF;
     color: white;
     cursor: pointer;
@@ -183,7 +183,7 @@
     border: 2px solid #38B6FF;
     border-radius: 10px;
     font-size: 18px;
-    font-family: Quicksand;
+    font-family: Montserrat;
 }
 
 .outerRangeContainer {
@@ -192,15 +192,13 @@
 }
 
 .question {
-    font-family: Quicksand;
-    font-weight: 300;
+    font-family: Montserrat;
     text-align: center;
     margin-top: 35px;
 }
 
 .questionError {
-    font-family: Quicksand;
-    font-weight: 300;
+    font-family: Montserrat;
     font-size: 35px;
     text-align: center;
     margin-top: 35px

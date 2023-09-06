@@ -102,7 +102,7 @@ function Welcome({setStartSurvey}) {
                                 <img className={monitorSize ? 'stepsMonitor' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step3.png')} />
                                 <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Ta-da! A plethora of gift ideas at your fingertips!</h1>
                             </div>
-                            <div onClick={() => setStartSurvey(true)} className='button' style={{height: (monitorSize || tabletSize) ? '70px' : '50px', width: (monitorSize || tabletSize) ? '400px' : '300px'}}>
+                            <div onClick={() => setStartSurvey(true)} className='button' style={{height: (monitorSize || tabletSize) ? '70px' : '55px', width: (monitorSize || tabletSize) ? '400px' : '300px'}}>
                                     <h1>Start Here</h1>
                             </div>
                     </div>
