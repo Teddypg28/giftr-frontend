@@ -186,7 +186,7 @@ function Survey() {
       !surveyComplete ? 
         
         <div className={laptopSize ? 'surveyContainerMobile' : 'surveyContainer'}>
-             <h1 style={{color: error ? '#38B6FF' : '#373737', fontSize: mobileSize ? '25px' : '35px'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
+             <h1 style={{color: error ? '#38B6FF' : '#373737', fontSize: mobileSize ? '28px' : '35px'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>

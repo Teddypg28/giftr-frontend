@@ -66,10 +66,21 @@
     width: fit-content
 }
 
+.headingTablet {
+    font-family: Montserrat;
+    text-align: center;
+    width: 650px;
+    color: white;
+    font-size: 30px;
+    margin: auto;
+    margin-top: -20px;
+}
+
+
 .headingMobile {
     font-family: Montserrat;
     text-align: center;
-    width: 340px;
+    width: 330px;
     color: white;
     font-size: 25px;
     margin: auto;
@@ -219,15 +230,13 @@
     font-size: 17px;
     font-weight: 300;
     font-family: Montserrat;
-    display: inline-block
 }
 
 .stepTextTablet {
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     font-family: Montserrat;
-    display: inline-block
 }
 
 .stepsMonitor {
@@ -239,7 +248,7 @@
 }
 
 .stepsMobile {
-    width: 30%;
+    width: 28%;
 }
 
 .stepsContainerMonitor, .stepsContainerTablet {
