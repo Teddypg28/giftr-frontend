@@ -84,7 +84,6 @@
 
 .interestSubheadingTablet {
     text-align: center;
-    border: 2px solid orange;
     font-weight: 300;
     font-size: 18px;
     margin-top: 5px;
@@ -257,7 +256,7 @@
 .questionOneContainer {
     display: flex;
     margin-bottom: 20px;
-    width: 400px;
+    width: 350px;
 }
 
 .rangeContainer, .genderContainer {

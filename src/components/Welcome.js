@@ -43,7 +43,7 @@ function Welcome({setStartSurvey}) {
 
     return (
         <div style={{overflow: (monitorSize || laptopSize) ? 'hidden' : 'scroll' }} className='mainWelcomeContainer'>
-             {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className='menuIcon' style={{top: tabletSize ? '75px' : mobileSize ? '49px' : null}}/>
+             {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className='menuIcon' style={{top: mobileSize ? '52px' : tabletSize ? '75px' : null}}/>
                     :
                     <div className={monitorSize ? 'headerLinksContainerMonitor' : 'headerLinksContainerTablet'}>
                         <p className='headerLink' onClick={handleAboutUsClick}>About Us</p>
@@ -86,7 +86,7 @@ function Welcome({setStartSurvey}) {
                 {monitorSize && <img src={require('../images/cornerPicTwo.png')} alt='' className='cornerPicTwo' />}
                 {(monitorSize || laptopSize) && <div className='cornerPicOne'></div>}
                 <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: (monitorSize || laptopSize || tabletSize) ? '200px' : '145px', width: (monitorSize || laptopSize || tabletSize) ? '200px' : '145px'}} />
+                    <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: mobileSize ? '150px' : '200px', width: mobileSize ? '150px' : '200px'}} />
                 </div>
                     <h2 className={monitorSize ? 'headingMonitor' : mobileSize ? 'headingMobile' : 'headingComputer'} style={{width: tabletSize && !mobileSize && '650px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
                     <h3 className={(laptopSize || monitorSize) ? 'welcomeSubheadingMonitor' : tabletSize ? 'welcomeSubheadingTablet' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
@@ -103,7 +103,7 @@ function Welcome({setStartSurvey}) {
                                 <img className={monitorSize ? 'stepsMonitor' : laptopSize ? 'stepsLaptop' : mobileSize ? 'stepsMobile' : 'stepsTablet'} alt='step 1' src={require('../images/step3.png')} />
                                 <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Ta-da! A plethora of gift ideas at your fingertips!</h1>
                             </div>
-                            <div onClick={() => setStartSurvey(true)} className='button' style={{height: mobileSize ? '60px' : '70px', width: mobileSize ? '300px' : '370px'}}>
+                            <div onClick={() => setStartSurvey(true)} className='button' style={{height: mobileSize ? '55px' : '70px', width: mobileSize ? '295px' : '370px'}}>
                                     <h1>Start Here</h1>
                             </div>
                     </div>
