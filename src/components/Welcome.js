@@ -11,8 +11,9 @@ import { useMediaQuery } from 'react-responsive';
 
 function Welcome({setStartSurvey}) {
 
-    const mobileSize = useMediaQuery({query: '(max-width: 930px)'})
-    const tabletSize = useMediaQuery({query: '(min-width: 931px)'})
+    const mobileSize = useMediaQuery({query: '(max-width: 500px'})
+    const tabletSize = useMediaQuery({query: '(min-width: 501px)'})
+    const laptopSize = useMediaQuery({query: '(min-width: 931px)'})
     const monitorSize = useMediaQuery({query: '(min-width: 1500px)'})
     
     const [aboutModalVisible, setAboutModalVisible] = useState(false)
@@ -41,8 +42,8 @@ function Welcome({setStartSurvey}) {
     Modal.setAppElement('#root')
 
     return (
-        <div className={tabletSize ? 'mainWelcomeContainerTablet' : 'mainWelcomeContainerMobile'}>
-             {mobileSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className='menuIcon' />
+        <div style={{overflow: tabletSize ? 'hidden' : 'scroll' }} className='mainWelcomeContainer'>
+             {(mobileSize || tabletSize) && !laptopSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className='menuIcon' style={{top: tabletSize ? '75px' : mobileSize ? '49px' : null}}/>
                     :
                     <div className={monitorSize ? 'headerLinksContainerMonitor' : 'headerLinksContainerTablet'}>
                         <p className='headerLink' onClick={handleAboutUsClick}>About Us</p>
@@ -52,15 +53,15 @@ function Welcome({setStartSurvey}) {
             <Modal isOpen={aboutModalVisible}>
                 <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
                 {monitorSize ? <img alt='' className='modalImageMonitor' src={require('../images/gift.png')} /> :
-                tabletSize ? <img alt='' className='modalImageTablet' src={require('../images/gift.png')} /> : null
+                laptopSize ? <img alt='' className='modalImageComputer' src={require('../images/gift.png')} /> : null
                 }
-                <h1 className='modalHeading' style={{fontSize: mobileSize ? '30px' : '40px'}}>What We Do</h1>
+                <h1 className='modalHeading' style={{fontSize: tabletSize ? '30px' : '40px'}}>What We Do</h1>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
-                    Gift shopping can sometimes <strong>be way more of a headache than it has to be.</strong> The ideas don't always come easy. The solution?
+                    Gift shopping can sometimes be way more of a headache than it has to be. The ideas don't always come easy. The solution?
                 </p>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
                     <strong>Let us do the work for you!</strong> Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
-                    You will now be able to do all of your gift shopping <strong>within minutes!</strong>
+                    You will now be able to do all of your gift shopping within minutes!
                 </p>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
                     Have questions or want to contact us? Send us an email at <strong>support@usegiftr.com</strong>. We look forward to talking with you!
@@ -69,9 +70,9 @@ function Welcome({setStartSurvey}) {
             <Modal isOpen={disclosureModalVisible}>
                 <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
                 {monitorSize ? <img alt='' className='modalImageMonitor' src={require('../images/shoppingBag.png')} /> :
-                tabletSize ? <img alt='' className='modalImageTablet' src={require('../images/shoppingBag.png')} /> : null
+                laptopSize ? <img alt='' className='modalImageComputer' src={require('../images/shoppingBag.png')} /> : null
                 }
-                <h1 className='modalHeading' style={{fontSize: mobileSize ? '30px' : '40px'}}>Affiliate Disclosure</h1>
+                <h1 className='modalHeading' style={{fontSize: tabletSize ? '30px' : '40px'}}>Affiliate Disclosure</h1>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
                     If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
                 </p>
@@ -83,26 +84,26 @@ function Welcome({setStartSurvey}) {
             <div>
                 {monitorSize && <img src={require('../images/cornerPicThree.png')} alt='' className='cornerPicThree' />}
                 {monitorSize && <img src={require('../images/cornerPicTwo.png')} alt='' className='cornerPicTwo' />}
-                {(monitorSize || tabletSize) && <div className='cornerPicOne'></div>}
+                {(monitorSize || laptopSize) && <div className='cornerPicOne'></div>}
                 <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: (monitorSize || tabletSize) ? '200px' : '145px', width: (monitorSize || tabletSize) ? '200px' : '145px'}} />
+                    <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: (monitorSize || laptopSize || tabletSize) ? '200px' : '145px', width: (monitorSize || laptopSize || tabletSize) ? '200px' : '145px'}} />
                 </div>
-                    <h2 className={monitorSize ? 'headingMonitor' : tabletSize ? 'headingTablet' : 'headingMobile'} style={{width: mobileSize && '320px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
-                    <h3 className={(tabletSize || monitorSize) ? 'welcomeSubheadingMonitor' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
+                    <h2 className={monitorSize ? 'headingMonitor' : (tabletSize || laptopSize) ? 'headingComputer' : 'headingMobile'} style={{width: tabletSize &&  !laptopSize && '600px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
+                    <h3 className={(laptopSize || monitorSize) ? 'welcomeSubheadingMonitor' : tabletSize? 'welcomeSubheadingTablet' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
                     <div className={monitorSize ? 'stepsContainerMonitor' : 'stepsContainerTablet'}>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
-                                <img className={monitorSize ? 'stepsMonitor' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step1.png')} />
+                                <img className={monitorSize ? 'stepsMonitor' : laptopSize ? 'stepsComputer' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step1.png')} />
                                 <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Tell us a bit about the person you are shopping for.</h1>
                             </div>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
-                                <img className={monitorSize ? 'stepsMonitor' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step2.png')} />
+                                <img className={monitorSize ? 'stepsMonitor' : laptopSize ? 'stepsComputer' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step2.png')} />
                                 <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Wait a few seconds.</h1>
                             </div>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
-                                <img className={monitorSize ? 'stepsMonitor' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step3.png')} />
+                                <img className={monitorSize ? 'stepsMonitor' : laptopSize ? 'stepsComputer' : tabletSize ? 'stepsTablet' : 'stepsMobile'} alt='step 1' src={require('../images/step3.png')} />
                                 <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Ta-da! A plethora of gift ideas at your fingertips!</h1>
                             </div>
-                            <div onClick={() => setStartSurvey(true)} className='button' style={{height: (monitorSize || tabletSize) ? '70px' : '55px', width: (monitorSize || tabletSize) ? '400px' : '300px'}}>
+                            <div onClick={() => setStartSurvey(true)} className='button' style={{height: (monitorSize || laptopSize || tabletSize) ? '70px' : '60px', width: (monitorSize || laptopSize || tabletSize) ? '370px' : '300px'}}>
                                     <h1>Start Here</h1>
                             </div>
                     </div>

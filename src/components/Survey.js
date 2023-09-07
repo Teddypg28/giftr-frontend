@@ -17,13 +17,15 @@ import QuestionFourMobile from './surveyQuestions/QuestionFourMobile';
 import WaitingScreen from './WaitingScreen';
 import GiftDisplay from './GiftDisplay';
 import GetEmail from './surveyQuestions/GetEmail';
+import QuestionFourTablet from './surveyQuestions/questionFourTablet';
 
 function Survey() {
 
     const recaptchaValue = useRef(null)
 
-    const windowSizeQuery = useMediaQuery({query: '(max-width: 1224px)'})
-    const mobileSize = useMediaQuery({query: '(max-width: 930px)'})
+    const laptopSize = useMediaQuery({query: '(max-width: 1500px)'})
+    const tabletSize = useMediaQuery({query: '(max-width: 1200px)'})
+    const mobileSize = useMediaQuery({query: '(max-width: 500px'})
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
@@ -164,11 +166,11 @@ function Survey() {
         }
     const questionOptions = {
         1:  <QuestionOne handleGenderClick={handleGenderClick} gender={gender} />,
-        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} windowSizeQuery={windowSizeQuery} />,
-        3:  <QuestionThree interests={interests} setInterests={setInterests} windowSizeQuery={windowSizeQuery} />,
-        4:  windowSizeQuery ? 
-            <QuestionFourMobile isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
-            <QuestionFour isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} handleOccasionIconClick={handleOccasionIconClick}/>,
+        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} laptopSize={laptopSize} />,
+        3:  <QuestionThree interests={interests} setInterests={setInterests} />,
+        4: mobileSize ? <QuestionFourMobile isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
+        tabletSize ? <QuestionFourTablet isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
+        <QuestionFour isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} handleOccasionIconClick={handleOccasionIconClick}/>,
         5: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
     }
 
@@ -183,7 +185,7 @@ function Survey() {
     return (
       !surveyComplete ? 
         
-        <div className={windowSizeQuery ? 'surveyContainerMobile' : 'surveyContainer'}>
+        <div className={laptopSize ? 'surveyContainerMobile' : 'surveyContainer'}>
              <h1 style={{color: error ? '#38B6FF' : '#373737', fontSize: mobileSize ? '30px' : '35px'}} className={error ? 'questionError' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
@@ -192,7 +194,7 @@ function Survey() {
             <>
                 <div className='captchaContainer'>
                     <ReCAPTCHA ref={recaptchaValue} sitekey='6Ld2x_EnAAAAAHq2tHUyFCXaGcsfGdU4cnFEarM0' />
-                    {invalidCaptcha && <p style={{color: 'red', fontFamily: 'Quicksand', textAlign: 'center'}}>Invalid Captcha</p>}
+                    {invalidCaptcha && <p style={{color: 'red', fontFamily: 'Montserrat', textAlign: 'center'}}>Invalid Captcha</p>}
                 </div>
                 <div onClick={validateSubmission} className='nextBtn'>
                     <h3>Search</h3>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Slider, createTheme, ThemeProvider } from '@mui/material';
 
-function QuestionTwo({ageInputValue, windowSizeQuery, setAgeInputValue, setAge}) {
+function QuestionTwo({ageInputValue, laptopSize, setAgeInputValue, setAge}) {
 
     const blueTheme = createTheme({
         palette: {
@@ -22,7 +22,7 @@ function QuestionTwo({ageInputValue, windowSizeQuery, setAgeInputValue, setAge})
     return (
         <>
             <input value={ageInputValue} onChange={e => handleSliderChange(e)} className='ageInput' />
-            <div className={windowSizeQuery ? 'sliderContainerMobile' : 'sliderContainer'}>
+            <div className={laptopSize ? 'sliderContainerReduced' : 'sliderContainer'}>
                 <ThemeProvider theme={blueTheme}>
                     <Slider value={ageInputValue} step={1} max={100} min={1} onChange={handleSliderChange} />
                 </ThemeProvider>

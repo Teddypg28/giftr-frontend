@@ -50,6 +50,17 @@
     resize: none;
 }
 
+.interestTextAreaTablet {
+    width: 500px;
+    height: 300px;
+    font-family: Montserrat;
+    font-size: 20px;
+    padding: 10px;
+    border: 3px solid #38B6FF;
+    border-radius: 5px;
+    resize: none;
+}
+
 .interestTextAreaMobile {
     width: 330px;
     height: 300px;
@@ -63,6 +74,15 @@
 }
 
 .interestSubheading {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    font-family: Montserrat;
+}
+
+.interestSubheadingTablet {
     text-align: center;
     font-weight: 300;
     font-size: 18px;
@@ -118,6 +138,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin: auto;
 }
 
 .nextBtn {
@@ -140,6 +161,18 @@
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.occasionContainerTablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 300px;
+    height: 130px;
+    border: 2px solid red;
     cursor: pointer;
 }
 
@@ -161,11 +194,18 @@
     gap: 20px;
 }
 
+.occasionsRowTablet {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 60px;
+}
+
 .occasionsRowMobile {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 90px;
+    gap: 30px;
 }
 
 .occasionSubheading {
@@ -215,8 +255,8 @@
 
 .questionOneContainer {
     display: flex;
-    gap: 60px;
     margin-bottom: 20px;
+    width: 400px;
 }
 
 .rangeContainer, .genderContainer {
@@ -233,21 +273,22 @@
 .surveyContainer {
     background-image: url('../images/surveybg.png');
     background-repeat: no-repeat;
-    overflow: hidden;
     height: 100vh;
+    overflow: hidden;
 }
 
 .surveyContainerMobile {
-    overflow: scroll;
     height: 100vh;
+    overflow: scroll;
 }
 
 .sliderContainer {
-    width: 40%
+    width: 40%;
+    margin-bottom: 20px;
 }
 
-.sliderContainerMobile {
-    width: 310px;
+.sliderContainerReduced {
+    width: 350px;
 }
 
 .waiting {
