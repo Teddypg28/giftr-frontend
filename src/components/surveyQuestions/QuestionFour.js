@@ -72,7 +72,7 @@ function QuestionFour({handleOccasionIconClick, handleOccasionInputChange, occas
                 </div>
             </div>
         </div>
-        <input onChange={(e) => handleOccasionInputChange(e)} value={occasionInputValue} className='occasionInput' placeholder="Don't see it listed? Enter it here!" />
+        <input onChange={(e) => handleOccasionInputChange(e)} value={occasionInputValue} className='input' style={{marginTop: '-20px'}} placeholder="Don't see it listed? Enter it here!" />
     </>
     );
 }
