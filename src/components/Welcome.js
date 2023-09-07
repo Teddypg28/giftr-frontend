@@ -42,7 +42,7 @@ function Welcome({setStartSurvey}) {
     Modal.setAppElement('#root')
 
     return (
-        <div style={{overflow: (monitorSize || laptopSize) ? 'hidden' : 'scroll' }} className='mainWelcomeContainer'>
+        <div className='mainWelcomeContainer'>
              {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className='menuIcon' style={{top: mobileSize ? '52px' : tabletSize ? '75px' : null}}/>
                     :
                     <div className={monitorSize ? 'headerLinksContainerMonitor' : 'headerLinksContainerTablet'}>
