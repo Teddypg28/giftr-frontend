@@ -9,7 +9,7 @@
     color: white;
     font-size: 9px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: Montserrat;
 }
 
@@ -69,10 +69,10 @@
     font-family: Montserrat;
     text-align: center;
     color: white;
-    font-size: 22px;
+    font-size: 180%;
     margin: auto;
+    width: 75vw;
     margin-top: -20px;
-    width: fit-content
 }
 
 .headerLinksContainerMonitor {
@@ -182,8 +182,8 @@
     align-items: center;
     background-color: white;
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .menuItemContainer {
@@ -222,7 +222,7 @@
 }
 
 .stepsMobile {
-    width: 5.8rem;
+    width: 23%;
 }
 
 .stepsContainerMonitor, .stepsContainerTablet {
@@ -250,6 +250,6 @@
     text-align: center;
     color: white;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 98%;
     font-family: Montserrat;
 }

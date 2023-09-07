@@ -56,11 +56,11 @@ function Welcome({setStartSurvey}) {
                 }
                 <h1 className='modalHeading' style={{fontSize: mobileSize ? '30px' : '40px'}}>What We Do</h1>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
-                    Gift shopping can sometimes <strong>be way more of a headache than it has to be.</strong> The ideas don't always come easy. The solution?
+                    Gift shopping can sometimes be way more of a headache than it has to be. The ideas don't always come easy. The solution?
                 </p>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
-                    <strong>Let us do the work for you!</strong> Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
-                    You will now be able to do all of your gift shopping <strong>within minutes!</strong>
+                    Let us do the work for you! Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
+                    You will now be able to do all of your gift shopping within minutes!
                 </p>
                 <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
                     Have questions or want to contact us? Send us an email at <strong>support@usegiftr.com</strong>. We look forward to talking with you!
@@ -87,7 +87,7 @@ function Welcome({setStartSurvey}) {
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: (monitorSize || tabletSize) ? '200px' : '145px', width: (monitorSize || tabletSize) ? '200px' : '145px'}} />
                 </div>
-                    <h2 className={monitorSize ? 'headingMonitor' : tabletSize ? 'headingTablet' : 'headingMobile'} style={{width: mobileSize && '320px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
+                    <h2 className={monitorSize ? 'headingMonitor' : tabletSize ? 'headingTablet' : 'headingMobile'}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
                     <h3 className={(tabletSize || monitorSize) ? 'welcomeSubheadingMonitor' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
                     <div className={monitorSize ? 'stepsContainerMonitor' : 'stepsContainerTablet'}>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
