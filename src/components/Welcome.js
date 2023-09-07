@@ -56,14 +56,14 @@ function Welcome({setStartSurvey}) {
                 laptopSize ? <img alt='' className='modalImageComputer' src={require('../images/gift.png')} /> : null
                 }
                 <h1 className='modalHeading' style={{fontSize: tabletSize ? '30px' : '40px'}}>What We Do</h1>
-                <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     Gift shopping can sometimes be way more of a headache than it has to be. The ideas don't always come easy. The solution?
                 </p>
-                <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     <strong>Let us do the work for you!</strong> Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
                     You will now be able to do all of your gift shopping within minutes!
                 </p>
-                <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     Have questions or want to contact us? Send us an email at <strong>support@usegiftr.com</strong>. We look forward to talking with you!
                 </p>
             </Modal>
@@ -73,10 +73,10 @@ function Welcome({setStartSurvey}) {
                 laptopSize ? <img alt='' className='modalImageComputer' src={require('../images/shoppingBag.png')} /> : null
                 }
                 <h1 className='modalHeading' style={{fontSize: tabletSize ? '30px' : '40px'}}>Affiliate Disclosure</h1>
-                <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
                 </p>
-                <p className={monitorSize ? 'modalParaMonitor' : tabletSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     This commission comes at <strong>NO extra cost from your end.</strong> It is simply a way for Amazon to compensate us for recommending their products to others like you!
                 </p>
             </Modal>
