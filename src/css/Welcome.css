@@ -69,9 +69,9 @@
     font-family: Montserrat;
     text-align: center;
     color: white;
-    font-size: 180%;
+    font-size: 150%;
     margin: auto;
-    width: 75vw;
+    width: 80vw;
     margin-top: -20px;
 }
 
@@ -211,7 +211,7 @@
 
 .stepTextTablet {
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     font-family: Montserrat;
     display: inline-block
@@ -222,7 +222,7 @@
 }
 
 .stepsMobile {
-    width: 23%;
+    width: 24%;
 }
 
 .stepsContainerMonitor, .stepsContainerTablet {
