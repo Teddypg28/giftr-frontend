@@ -11,7 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 
 function Welcome({setStartSurvey}) {
 
-    const mobileSize = useMediaQuery({query: '(max-width: 530px'})
+    const mobileSize = useMediaQuery({query: '(max-width: 630px'})
     const tabletSize = useMediaQuery({query: '(max-width: 899px)'})
     const laptopSize = useMediaQuery({query: '(min-width: 900px)'})
     const monitorSize = useMediaQuery({query: '(min-width: 1500px)'})
@@ -42,7 +42,7 @@ function Welcome({setStartSurvey}) {
     Modal.setAppElement('#root')
 
     return (
-        <div style={{overflow: (monitorSize || laptopSize) ? 'hidden' : 'scroll' }} className='mainWelcomeContainer'>
+        <div style={{overflow: (monitorSize || laptopSize || tabletSize) ? 'hidden' : 'scroll' }} className='mainWelcomeContainer'>
              {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className='menuIcon' style={{top: mobileSize ? '52px' : tabletSize ? '75px' : null}}/>
                     :
                     <div className={monitorSize ? 'headerLinksContainerMonitor' : 'headerLinksContainerTablet'}>
@@ -88,7 +88,7 @@ function Welcome({setStartSurvey}) {
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <img className='logo' alt='gift logo' src={require('../images/giftr-logo.png')} style={{height: mobileSize ? '150px' : '200px', width: mobileSize ? '150px' : '200px'}} />
                 </div>
-                    <h2 className={monitorSize ? 'headingMonitor' : mobileSize ? 'headingMobile' : 'headingComputer'} style={{width: tabletSize && !mobileSize && '650px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
+                    <h2 className={monitorSize ? 'headingMonitor' : laptopSize ? 'headingLaptop' : 'headingMobile'} style={{width: tabletSize && !mobileSize && '650px'}}>Find the Best Gifts on Amazon with AI-Inspired Ideas.</h2>
                     <h3 className={(laptopSize || monitorSize) ? 'welcomeSubheadingMonitor' : tabletSize ? 'welcomeSubheadingTablet' : 'welcomeSubheadingMobile'}>Generate quick gift ideas for any occassion.</h3>
                     <div className={monitorSize ? 'stepsContainerMonitor' : laptopSize ? 'stepsContainerTablet' : 'stepsContainerMobile'}>
                             <div className={(monitorSize || laptopSize) ? 'stepContainerMonitor' : 'stepContainerTablet'}>
