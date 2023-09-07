@@ -69,11 +69,11 @@
 .headingMobile {
     font-family: Montserrat;
     text-align: center;
+    width: 340px;
     color: white;
-    font-size: 22px;
+    font-size: 25px;
     margin: auto;
     margin-top: -20px;
-    width: 320px
 }
 
 .headerLinksContainerMonitor {
