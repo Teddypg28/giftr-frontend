@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 function Welcome({setStartSurvey}) {
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px'})
-    const tabletSize = useMediaQuery({query: '(min-width: 501px)'})
+    const tabletSize = useMediaQuery({query: '(min-width: 550px)'})
     const laptopSize = useMediaQuery({query: '(min-width: 931px)'})
     const monitorSize = useMediaQuery({query: '(min-width: 1500px)'})
     

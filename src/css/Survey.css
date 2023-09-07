@@ -84,6 +84,7 @@
 
 .interestSubheadingTablet {
     text-align: center;
+    border: 2px solid orange;
     font-weight: 300;
     font-size: 18px;
     margin-top: 5px;
