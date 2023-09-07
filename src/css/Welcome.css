@@ -234,7 +234,7 @@
     width: 22%
 }
 
-.stepsTablet, .stepsComputer {
+.stepsTablet, .stepsLaptop {
     width: 20%;
 }
 
@@ -252,7 +252,7 @@
 
 .stepsContainerMobile {
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .welcomeSubheadingMonitor {
