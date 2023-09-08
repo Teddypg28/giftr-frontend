@@ -112,10 +112,10 @@
     margin-top: -10px;
 }
 
-.mainWelcomeContainerTablet {
+.mainWelcomeContainerLaptop {
     background-color: #121212; 
     height: 100vh;
-    width: 100vw;
+    width: 100vw
 }
 
 .mainWelcomeContainerMobile {
@@ -243,8 +243,12 @@
     display: inline-block
 }
 
-.stepsMonitor, .stepsLaptop {
+.stepsMonitor {
     width: 22%
+}
+
+.stepsLaptop {
+    width: 19%;
 }
 
 .stepsTablet {

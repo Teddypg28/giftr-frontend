@@ -49,7 +49,7 @@ function Welcome({setStartSurvey}) {
     Modal.setAppElement('#root')
 
     return (
-        <div className={laptopSize ? 'mainWelcomeContainerTablet' : 'mainWelcomeContainerMobile'}>
+        <div className={laptopSize ? 'mainWelcomeContainerLaptop' : 'mainWelcomeContainerMobile'}>
              {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className={mobileSize ? 'menuIcon' : 'menuIconTablet'} /> :
                     <div className={monitorSize ? 'headerLinksContainerMonitor' : 'headerLinksContainerTablet'}>
                         <p className='headerLink' onClick={handleAboutUsClick}>About Us</p>

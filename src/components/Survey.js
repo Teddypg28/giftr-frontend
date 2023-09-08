@@ -25,6 +25,8 @@ function Survey() {
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
     const tabletSize = useMediaQuery({query: '(max-width: 899px)'})
+    const laptopSize = useMediaQuery({query: '(min-width: 900px)'})
+    const monitorSize = useMediaQuery({query: '(min-width: 1500px)'})
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
@@ -184,7 +186,7 @@ function Survey() {
     return (
       !surveyComplete ? 
         
-        <div className={tabletSize ? 'surveyContainerTablet' : 'surveyContainer'}>
+        <div className={monitorSize ? 'surveyContainer' : laptopSize ? 'surveyContainerLaptop' : 'surveyContainerTablet'}>
              <h1 style={{color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : mobileSize ? 'questionMobile' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}

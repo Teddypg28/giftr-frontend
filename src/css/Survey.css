@@ -297,6 +297,13 @@
     overflow: hidden;
 }
 
+.surveyContainerLaptop {
+    background-image: url('../images/surveybg.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 .surveyContainerTablet {
     height: 100vh;
     overflow-y: scroll;
