@@ -219,6 +219,14 @@
     margin-top: 80px;
 }
 
+.privacyPolicyContainer {
+    width: 50vw;
+    line-height: 25px;
+    margin: auto;
+    text-align: center;
+    font-family: Montserrat;
+}
+
 .stepContainerMonitor, .stepContainerTablet {
     display: flex;
     align-items: center;

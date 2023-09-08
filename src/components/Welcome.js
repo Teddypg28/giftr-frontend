@@ -4,6 +4,7 @@ import '../css/Welcome.css'
 
 import Modal from 'react-modal';
 import Menu from './Menu';
+import PrivacyPolicy from './PrivacyPolicy';
 
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { AiOutlineMenu } from 'react-icons/ai'
@@ -71,7 +72,7 @@ function Welcome({setStartSurvey}) {
                     You will now be able to do all of your gift shopping within minutes!
                 </p>
                 <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
-                    Have questions or want to contact us? Send us an email at <strong>support@usegiftr.com</strong>. We look forward to talking with you!
+                    Have questions or want to contact us? Send us an email at <strong>support@usegiftr.io</strong>. We look forward to talking with you!
                 </p>
             </Modal>
             <Modal isOpen={disclosureModalVisible}>
@@ -93,12 +94,7 @@ function Welcome({setStartSurvey}) {
                 laptopSize ? <img alt='' className='modalImageTablet' src={require('../images/lock.png')} /> : null
                 }
                 <h1 className='modalHeading' style={{fontSize: tabletSize ? '35px' : '40px'}}>Privacy Policy</h1>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
-                    If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
-                </p>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
-                    This commission comes at <strong>NO extra cost from your end.</strong> It is simply a way for Amazon to compensate us for recommending their products to others like you!
-                </p>
+                <PrivacyPolicy style={{fontSize: (monitorSize || laptopSize) ? '18px' : mobileSize ? '13px' : '16px'}} />
             </Modal>
             {menuVisible && <Menu setMenuVisible={setMenuVisible} handleAboutUsClick={handleAboutUsClick} handleAffiliateDisclosureClick={handleAffiliateDisclosureClick} handlePrivacyPolicyClick={handlePrivacyPolicyClick} /> }
             <div>
