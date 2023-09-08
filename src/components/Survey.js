@@ -184,7 +184,7 @@ function Survey() {
     return (
       !surveyComplete ? 
         
-        <div className={tabletSize ? 'surveyContainerMobile' : 'surveyContainer'}>
+        <div className={tabletSize ? 'surveyContainerTablet' : 'surveyContainer'}>
              <h1 style={{color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : mobileSize ? 'questionMobile' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}

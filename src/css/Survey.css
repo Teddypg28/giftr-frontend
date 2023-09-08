@@ -292,9 +292,10 @@
     overflow: hidden;
 }
 
-.surveyContainerMobile {
+.surveyContainerTablet {
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .sliderContainer {
