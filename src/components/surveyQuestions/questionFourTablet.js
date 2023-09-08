@@ -4,8 +4,8 @@ function QuestionFourTablet({handleOccasionIconClick, handleOccasionInputChange,
     
     return (
     <>
-        <div className='mainContainerMobile'>
-            <div className='occasionsRowMobile'>
+        <div className='mainContainerTablet'>
+            <div className='occasionsRowTablet'>
                 <div style={{opacity: occasion !== 'birthday' && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick('birthday')} className='occasionContainer'>
                     <img className='occasionIcon' alt='birthday icon' src={require('../../occasion-icons/birthday.png')} />
                     <h3 className='occasionName'>Birthday</h3>
@@ -19,7 +19,7 @@ function QuestionFourTablet({handleOccasionIconClick, handleOccasionInputChange,
                     <h3 className='occasionName'>Anniversary</h3>
                 </div>
             </div>
-            <div className='occasionsRowMobile'>
+            <div className='occasionsRowTablet'>
                 <div style={{opacity: occasion !== 'baby shower' && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick('baby shower')} className='occasionContainer'>
                     <img className='occasionIcon' alt='baby shower icon' src={require('../../occasion-icons/baby-shower.png')} />
                     <h3 className='occasionName'>Baby Shower</h3>
@@ -33,7 +33,7 @@ function QuestionFourTablet({handleOccasionIconClick, handleOccasionInputChange,
                     <h3 className='occasionName'>Baptism</h3>
                 </div>
             </div>
-            <div className='occasionsRowMobile'>
+            <div className='occasionsRowTablet'>
                 <div style={{opacity: occasion !== 'bridal shower' && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick('bridal shower')} className='occasionContainer'>
                     <img className='occasionIcon' alt='bridal shower icon' src={require('../../occasion-icons/bridal-shower.png')} />
                     <h3 className='occasionName'>Bridal Shower</h3>
@@ -47,7 +47,7 @@ function QuestionFourTablet({handleOccasionIconClick, handleOccasionInputChange,
                     <h3 className='occasionName'>Father's Day</h3>
                 </div>
             </div>
-            <div className='occasionsRowMobile'>
+            <div className='occasionsRowTablet'>
                 <div style={{opacity: occasion !== "mother's day" && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("mother's day")} className='occasionContainer'>
                     <img className='occasionIcon' alt='mothers day icon' src={require('../../occasion-icons/mothers-day.png')} />
                     <h3 className='occasionName'>Mother's Day</h3>
@@ -61,7 +61,7 @@ function QuestionFourTablet({handleOccasionIconClick, handleOccasionInputChange,
                     <h3 className='occasionName'>Graduation</h3>
                 </div>
             </div>        
-            <div className='occasionsRowMobile'>
+            <div className='occasionsRowTablet'>
                 <div style={{opacity: occasion !== "new year's" && !isFirstOccasionRender && '20%'}} onClick={() => handleOccasionIconClick("new year's")} className='occasionContainer'>
                     <img className='occasionIcon' alt="new year's icon" src={require('../../occasion-icons/new-years.png')} />
                     <h3 className='occasionName'>New Year's</h3>

@@ -16,11 +16,13 @@ function Welcome({setStartSurvey}) {
     const laptopSize = useMediaQuery({query: '(min-width: 900px)'})
     const monitorSize = useMediaQuery({query: '(min-width: 1500px)'})
     
+    const [privacyPolicyVisible, setPrivacyPolicyVisible] = useState(false)
     const [aboutModalVisible, setAboutModalVisible] = useState(false)
     const [disclosureModalVisible, setDisclosureModalVisible] = useState(false)
     const [menuVisible, setMenuVisible] = useState(false)
 
     const closeModal = () => {
+        setPrivacyPolicyVisible(false)
         setAboutModalVisible(false)
         setDisclosureModalVisible(false)
     }
@@ -35,6 +37,11 @@ function Welcome({setStartSurvey}) {
         setAboutModalVisible(true)
     }
 
+    const handlePrivacyPolicyClick = () => {
+        setMenuVisible(false)
+        setPrivacyPolicyVisible(true)
+    }
+
     const showMenu = () => {
         setMenuVisible(true)
     }
@@ -43,11 +50,11 @@ function Welcome({setStartSurvey}) {
 
     return (
         <div className={laptopSize ? 'mainWelcomeContainerTablet' : 'mainWelcomeContainerMobile'}>
-             {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className={mobileSize ? 'menuIcon' : 'menuIconTablet'} />
-                    :
+             {tabletSize ? <AiOutlineMenu onClick={showMenu} size={30} color='white' className={mobileSize ? 'menuIcon' : 'menuIconTablet'} /> :
                     <div className={monitorSize ? 'headerLinksContainerMonitor' : 'headerLinksContainerTablet'}>
                         <p className='headerLink' onClick={handleAboutUsClick}>About Us</p>
                         <p className='headerLink' onClick={handleAffiliateDisclosureClick}>Affiliate Disclosure</p>
+                        <p className='headerLink' onClick={handlePrivacyPolicyClick}>Privacy Policy</p>
                     </div>
                     }
             <Modal isOpen={aboutModalVisible}>
@@ -55,15 +62,15 @@ function Welcome({setStartSurvey}) {
                 {monitorSize ? <img alt='' className='modalImageMonitor' src={require('../images/gift.png')} /> :
                 laptopSize ? <img alt='' className='modalImageTablet' src={require('../images/gift.png')} /> : null
                 }
-                <h1 className='modalHeading' style={{fontSize: tabletSize ? '30px' : '40px'}}>What We Do</h1>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <h1 className='modalHeading' style={{fontSize: tabletSize ? '35px' : '40px'}}>What We Do</h1>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     Gift shopping can sometimes be way more of a headache than it has to be. The ideas don't always come easy. The solution?
                 </p>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     Let us do the work for you! Simply describe who you are shopping for, and let our AI engine do all of the heavy lifting for you.
                     You will now be able to do all of your gift shopping within minutes!
                 </p>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     Have questions or want to contact us? Send us an email at <strong>support@usegiftr.com</strong>. We look forward to talking with you!
                 </p>
             </Modal>
@@ -72,15 +79,28 @@ function Welcome({setStartSurvey}) {
                 {monitorSize ? <img alt='' className='modalImageMonitor' src={require('../images/shoppingBag.png')} /> :
                 laptopSize ? <img alt='' className='modalImageTablet' src={require('../images/shoppingBag.png')} /> : null
                 }
-                <h1 className='modalHeading' style={{fontSize: tabletSize ? '30px' : '40px'}}>Affiliate Disclosure</h1>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <h1 className='modalHeading' style={{fontSize: tabletSize ? '35px' : '40px'}}>Affiliate Disclosure</h1>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
                 </p>
-                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaTablet' : 'modalParaMobile'}>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
                     This commission comes at <strong>NO extra cost from your end.</strong> It is simply a way for Amazon to compensate us for recommending their products to others like you!
                 </p>
             </Modal>
-            {menuVisible && <Menu setMenuVisible={setMenuVisible} handleAboutUsClick={handleAboutUsClick} handleAffiliateDisclosureClick={handleAffiliateDisclosureClick} /> }
+            <Modal isOpen={privacyPolicyVisible}>
+                <AiOutlineCloseCircle size={30} className='closeBtn' onClick={closeModal} />
+                {monitorSize ? <img alt='' className='modalImageMonitor' src={require('../images/lock.png')} /> :
+                laptopSize ? <img alt='' className='modalImageTablet' src={require('../images/lock.png')} /> : null
+                }
+                <h1 className='modalHeading' style={{fontSize: tabletSize ? '35px' : '40px'}}>Privacy Policy</h1>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
+                    If you decide to purchase one of the products that our AI engine recommends, we will earn a small commission from Amazon.
+                </p>
+                <p className={monitorSize ? 'modalParaMonitor' : laptopSize ? 'modalParaLaptop' : mobileSize ? 'modalParaMobile' : 'modalParaTablet'}>
+                    This commission comes at <strong>NO extra cost from your end.</strong> It is simply a way for Amazon to compensate us for recommending their products to others like you!
+                </p>
+            </Modal>
+            {menuVisible && <Menu setMenuVisible={setMenuVisible} handleAboutUsClick={handleAboutUsClick} handleAffiliateDisclosureClick={handleAffiliateDisclosureClick} handlePrivacyPolicyClick={handlePrivacyPolicyClick} /> }
             <div>
                 {monitorSize && <img src={require('../images/cornerPicThree.png')} alt='' className='cornerPicThree' />}
                 {monitorSize && <img src={require('../images/cornerPicTwo.png')} alt='' className='cornerPicTwo' />}

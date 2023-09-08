@@ -126,6 +126,11 @@
     overflow-y: scroll;
 }
 
+.mainContainerTablet {
+    height: 400px;
+    overflow-y: scroll;
+}
+
 .innerRangeContainer {
     display: flex;
     margin: -30px;
@@ -309,6 +314,7 @@
 
 .sliderContainerTablet {
     width: 80%;
+    margin-top: 12px;
 }
 
 .waiting {

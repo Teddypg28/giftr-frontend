@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
-function Menu({setMenuVisible, handleAboutUsClick, handleAffiliateDisclosureClick}) {
+function Menu({setMenuVisible, handleAboutUsClick, handleAffiliateDisclosureClick, handlePrivacyPolicyClick}) {
 
     const closeMenu = () => {
         setMenuVisible(false)
@@ -14,6 +14,7 @@ function Menu({setMenuVisible, handleAboutUsClick, handleAffiliateDisclosureClic
             <div className='menuItemContainer'>
                 <p className='menuItem' onClick={handleAboutUsClick}>About Us</p>
                 <p className='menuItem' onClick={handleAffiliateDisclosureClick}>Affiliate Disclosure</p>
+                <p className='menuItem' onClick={handlePrivacyPolicyClick}>Privacy Policy</p>
             </div>
         </div>
     );
