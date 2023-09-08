@@ -69,7 +69,7 @@
     font-family: Montserrat;
     text-align: center;
     color: white;
-    font-size: 27px;
+    font-size: 26px;
     margin: auto;
     width: 95%;
     margin-top: -20px;
@@ -79,9 +79,9 @@
     font-family: Montserrat;
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 32px;
     margin: auto;
-    width: 70%;
+    width: 85%;
     margin-top: -20px;
 }
 
@@ -169,6 +169,13 @@
     position: absolute;
     right: 30px;
     top: 49px;
+    cursor: pointer;
+}
+
+.menuIconTablet {
+    position: absolute;
+    right: 30px;
+    top: 75px;
     cursor: pointer;
 }
 
@@ -260,10 +267,18 @@
     font-family: Montserrat;
 }
 
+.welcomeSubheadingTablet {
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 20px;
+    font-family: Montserrat;
+}
+
 .welcomeSubheadingMobile {
     text-align: center;
     color: white;
     font-weight: 300;
-    font-size: 100%;
+    font-size: 15px;
     font-family: Montserrat;
 }
