@@ -194,7 +194,7 @@ function Survey() {
             {currentQuestion === 5 && 
             <>
                 <div className='captchaContainer'>
-                    <ReCAPTCHA ref={recaptchaValue} sitekey='6Ld2x_EnAAAAAHq2tHUyFCXaGcsfGdU4cnFEarM0' />
+                    <ReCAPTCHA ref={recaptchaValue} sitekey='6LfJLg4oAAAAAOfTMIXCpHZl9dni85wKSTJ3mtEV' />
                     {invalidCaptcha && <p style={{color: 'red', fontFamily: 'Montserrat', textAlign: 'center'}}>Invalid Captcha</p>}
                 </div>
                 <div onClick={validateSubmission} className='nextBtn'>
