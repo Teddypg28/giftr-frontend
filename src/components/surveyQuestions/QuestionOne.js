@@ -11,10 +11,10 @@ function QuestionOne({handleGenderClick, gender}) {
 
     return (
         <div className='questionOneContainer'>
-            <div onClick={() => handleGenderClick('male')} className='male' style={{backgroundColor: '#9ADAFF', opacity: gender === 'female' && '20%', height: mobileSize ? '125px' : '150px', width:  mobileSize ? '125px' : '150px'}}>
+            <div onClick={() => handleGenderClick('male')} className='male' style={{backgroundColor: '#9ADAFF', opacity: gender === 'female' && '20%', height: mobileSize ? '125px' : '160px', width:  mobileSize ? '125px' : '160px'}}>
                 <FaMale size={mobileSize ? 80 : 100} color='white' />
             </div>
-            <div onClick={() => handleGenderClick('female')} className='female' style={{backgroundColor: '#F4CFE5', opacity: gender === 'male' && '20%', height: mobileSize ? '125px' : '150px', width:  mobileSize ? '125px' : '150px'}}>
+            <div onClick={() => handleGenderClick('female')} className='female' style={{backgroundColor: '#F4CFE5', opacity: gender === 'male' && '20%', height: mobileSize ? '125px' : '160px', width:  mobileSize ? '125px' : '160px'}}>
                 <FaFemale size={mobileSize ? 80 : 100} color='white' />
             </div>
         </div>

@@ -46,7 +46,7 @@
     padding: 10px;
     border: 3px solid #38B6FF;
     border-radius: 5px;
-    margin-top: -25px;
+    margin-top: 15px;
     resize: none;
 }
 
@@ -56,18 +56,19 @@
     font-family: Montserrat;
     font-size: 20px;
     padding: 10px;
-    margin-top: -25px;
+    margin: auto;
+    margin-top: 15px;
     border: 3px solid #38B6FF;
     border-radius: 5px;
     resize: none;
 }
 
 .interestTextAreaMobile {
-    width: 330px;
+    width: 320px;
     height: 300px;
     font-family: Montserrat;
     font-size: 20px;
-    margin-top: -40px;
+    margin-top: 15px;
     padding: 10px;
     border: 3px solid #38B6FF;
     border-radius: 5px;
@@ -78,6 +79,7 @@
     text-align: center;
     font-weight: 300;
     font-size: 18px;
+    width: 85%;
     margin-top: 5px;
     margin-bottom: 1px;
     font-family: Montserrat;
@@ -87,7 +89,10 @@
     text-align: center;
     font-weight: 300;
     font-size: 18px;
+    margin: auto;
+    margin-left: auto;
     margin-top: 5px;
+    width: 70%;
     margin-bottom: 1px;
     font-family: Montserrat;
 }
@@ -95,7 +100,7 @@
 .interestSubheadingMobile {
     text-align: center;
     font-size: 16px;
-    width: 360px;
+    width: 50%;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -105,7 +110,10 @@
 
 .interestSubheadingContainer {
     margin-top: -30px;
-    width: 600px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mainContainer {
@@ -170,7 +178,6 @@
     margin-top: 15px;
     width: 300px;
     height: 130px;
-    border: 2px solid red;
     cursor: pointer;
 }
 
@@ -264,7 +271,7 @@
 .questionOneContainer {
     display: flex;
     margin-bottom: 20px;
-    width: 350px;
+    width: 400px;
 }
 
 .rangeContainer, .genderContainer {
@@ -297,6 +304,10 @@
 
 .sliderContainerReduced {
     width: 350px;
+}
+
+.sliderContainerTablet {
+    width: 80%;
 }
 
 .waiting {

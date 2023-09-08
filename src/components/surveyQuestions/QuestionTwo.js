@@ -2,7 +2,12 @@ import React from 'react';
 
 import { Slider, createTheme, ThemeProvider } from '@mui/material';
 
-function QuestionTwo({ageInputValue, laptopSize, setAgeInputValue, setAge}) {
+import { useMediaQuery } from 'react-responsive';
+
+function QuestionTwo({ageInputValue, setAgeInputValue, setAge}) {
+
+    const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
+    const tabletSize = useMediaQuery({query: '(max-width: 899px)'})
 
     const blueTheme = createTheme({
         palette: {
@@ -22,7 +27,7 @@ function QuestionTwo({ageInputValue, laptopSize, setAgeInputValue, setAge}) {
     return (
         <>
             <input value={ageInputValue} onChange={e => handleSliderChange(e)} className='ageInput' />
-            <div className={laptopSize ? 'sliderContainerReduced' : 'sliderContainer'}>
+            <div className={mobileSize ? 'sliderContainerReduced' : tabletSize ? 'sliderContainerTablet' : 'sliderContainer'}>
                 <ThemeProvider theme={blueTheme}>
                     <Slider value={ageInputValue} step={1} max={100} min={1} onChange={handleSliderChange} />
                 </ThemeProvider>

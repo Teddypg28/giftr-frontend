@@ -25,7 +25,6 @@ function Survey() {
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
     const tabletSize = useMediaQuery({query: '(max-width: 899px)'})
-    const laptopSize = useMediaQuery({query: '(min-width: 900px)'})
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
@@ -166,7 +165,7 @@ function Survey() {
         }
     const questionOptions = {
         1:  <QuestionOne handleGenderClick={handleGenderClick} gender={gender} />,
-        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} laptopSize={laptopSize} />,
+        2:  <QuestionTwo setAge={setAge} ageInputValue={ageInputValue} setAgeInputValue={setAgeInputValue} />,
         3:  <QuestionThree interests={interests} setInterests={setInterests} />,
         4: mobileSize ? <QuestionFourMobile isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
         tabletSize ? <QuestionFourTablet isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
