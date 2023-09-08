@@ -55,7 +55,7 @@
     width: fit-content
 }
 
-.headingTablet {
+.headingLaptop {
     font-family: Montserrat;
     text-align: center;
     color: white;
@@ -69,9 +69,19 @@
     font-family: Montserrat;
     text-align: center;
     color: white;
-    font-size: 1.9rem;
+    font-size: 27px;
     margin: auto;
-    width: 97vw;
+    width: 95%;
+    margin-top: -20px;
+}
+
+.headingTablet {
+    font-family: Montserrat;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    margin: auto;
+    width: 70%;
     margin-top: -20px;
 }
 
@@ -217,12 +227,16 @@
     display: inline-block
 }
 
-.stepsMonitor, .stepsTablet {
+.stepsMonitor, .stepsLaptop {
     width: 22%
 }
 
+.stepsTablet {
+    width: 24%;
+}
+
 .stepsMobile {
-    width: 26%;
+    width: 29%;
 }
 
 .stepsContainerMonitor, .stepsContainerTablet {
