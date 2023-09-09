@@ -10,7 +10,7 @@ function QuestionOne({handleGenderClick, gender}) {
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
     return (
-        <div className='questionOneContainer'>
+        <div className='questionOneContainer' style={{width: mobileSize && '360px'}}>
             <div onClick={() => handleGenderClick('male')} className='male' style={{backgroundColor: '#9ADAFF', opacity: gender === 'female' && '20%', height: mobileSize ? '125px' : '155px', width:  mobileSize ? '125px' : '155px'}}>
                 <FaMale size={mobileSize ? 80 : 100} color='white' />
             </div>

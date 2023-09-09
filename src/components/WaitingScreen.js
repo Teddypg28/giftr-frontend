@@ -8,7 +8,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
-    const messageArray = ['Searching Now...Please Give Us 1-2 Minutes', 'Almost Done...', 'Finished!']
+    const messageArray = ['Searching Now...This Will Take About Two and a Half Minutes', 'Almost Done...', 'Finished!']
 
     const [currentRender, setCurrentRender] = useState(0)
 
@@ -41,8 +41,8 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         :
 
         <div className='waiting'>
-            <h1 style={{fontSize: '25px'}}>{currentMessage.current}</h1>
-            <p className='waitingSubheading'>Please do not close the browser.</p>
+            <h1 style={{fontSize: '25px', width: '95%'}}>{currentMessage.current}</h1>
+            <p className='waitingSubheading'>Feel free to come back. Just make sure to not close your browser.</p>
             <LoadingIcons.ThreeDots stroke='#38B6FF' />
         </div>
 
