@@ -9,12 +9,12 @@ function GiftDisplay({productsObject}) {
 
     console.log(productsObject)
 
-    const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
+    const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
     const productCards = []
     const generateProductCards = () => {
         for (let i = 1; i<Object.keys(productsObject).length + 1; i++) {
-            productCards.push(<ProductCard windowSizeQuery={windowSizeQuery} cardData={productsObject[i]} />)
+            productCards.push(<ProductCard mobileSize={mobileSize} cardData={productsObject[i]} />)
         }
 
         return productCards
@@ -26,9 +26,9 @@ function GiftDisplay({productsObject}) {
                 <h1 className='giftDisplayHeader'>We've got some ideas for you...</h1>
                 <p className='giftDisplaySubheader'>We sent this entire list to your email, too, in case you want to look back at it!</p>
             </div>
-            <div className={windowSizeQuery ? 'giftDisplayContainerMobile' : 'giftDisplayContainer'}>
+            <div className={mobileSize ? 'giftDisplayContainerMobile' : 'giftDisplayContainer'}>
                 {generateProductCards()}
-                <div className={windowSizeQuery ? 'thankYouMessageContainerMobile' : 'thankYouMessageContainer'}>
+                <div className={mobileSize ? 'thankYouMessageContainerMobile' : 'thankYouMessageContainer'}>
                     <p className='thankYouMessage'>
                         Thank you for using Giftr! Feel free to use it as many times as you wish to get <strong>as many ideas as possible.</strong>
                     </p>

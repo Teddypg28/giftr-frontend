@@ -90,7 +90,7 @@ function Survey() {
             }
                 try {
                     setSurveyComplete(true)
-                    const res = await axios.post('http://localhost:5000/products', answersObject)
+                    const res = await axios.post('https://api.usegiftr.io/products', answersObject)
                     if (res.status === 200) {
                         setIsRequestSuccessful(true)
                         setProductsObject(res.data)
@@ -155,7 +155,7 @@ function Survey() {
                     } else {
                         const captchaData = { token }
                         recaptchaValue.current.reset()
-                        const res = await axios.post('http://localhost:5000/captcha', captchaData)
+                        const res = await axios.post('https://api.usegiftr.io/captcha', captchaData)
         
                         if (res.data.success) {
                             findGifts()
