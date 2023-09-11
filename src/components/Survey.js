@@ -94,7 +94,7 @@ function Survey() {
 
                 try {
                     setSurveyComplete(true)
-                    const res = await axios.post('https://api.usegiftr.io/products', answersObject)
+                    const res = await axios.post('https://api.usegiftr.io/dev/submit', answersObject)
                     if (res.status === 200) {
                         setIsRequestSuccessful(true)
                         setProductsObject(res.data)
