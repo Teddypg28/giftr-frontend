@@ -45,6 +45,7 @@ function Survey() {
     const [occasionInputValue, setOccasionInputValue] = useState('')
     const [email, setEmail] = useState('')
     const [firstName, setFirstName] = useState('')
+    const [captchaToken, setCaptchaToken] = useState('')
 
     const [productsObject, setProductsObject] = useState({})
 
@@ -78,16 +79,19 @@ function Survey() {
         }, 500);
     }
 
+    
     const findGifts = async () => {
         
-           const answersObject = {
-                age,
-                gender,
-                interests: interests.split(', '),
-                occasion: occasionInputValue === '' ? occasion : occasionInputValue,
-                firstName, 
-                email
-            }
+        const answersObject = {
+             age,
+             gender,
+             interests: interests.split(', '),
+             occasion: occasionInputValue === '' ? occasion : occasionInputValue,
+             firstName, 
+             email,
+             captchaToken
+         }
+
                 try {
                     setSurveyComplete(true)
                     const res = await axios.post('https://api.usegiftr.io/products', answersObject)
@@ -153,13 +157,9 @@ function Survey() {
                             setInvalidCaptcha(false)
                         }, 2000);
                     } else {
-                        const captchaData = { token }
+                        setCaptchaToken(token)
                         recaptchaValue.current.reset()
-                        const res = await axios.post('https://api.usegiftr.io/captcha', captchaData)
-        
-                        if (res.data.success) {
-                            findGifts()
-                        }
+                        findGifts()
                     }
                 }
         }
