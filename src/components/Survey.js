@@ -83,8 +83,8 @@ function Survey() {
     const findGifts = async () => {
         
         const answersObject = {
-             age,
              gender,
+             age,
              interests: interests.split(', '),
              occasion: occasionInputValue === '' ? occasion : occasionInputValue,
              firstName, 
