@@ -22,6 +22,7 @@ import QuestionFourTablet from './surveyQuestions/questionFourTablet';
 function Survey() {
 
     const recaptchaValue = useRef(null)
+    const captchaToken = useRef(null)
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
     const tabletSize = useMediaQuery({query: '(max-width: 899px)'})
@@ -45,7 +46,6 @@ function Survey() {
     const [occasionInputValue, setOccasionInputValue] = useState('')
     const [email, setEmail] = useState('')
     const [firstName, setFirstName] = useState('')
-    const [captchaToken, setCaptchaToken] = useState('')
 
     const [productsObject, setProductsObject] = useState({})
 
@@ -89,7 +89,7 @@ function Survey() {
              occasion: occasionInputValue === '' ? occasion : occasionInputValue,
              firstName, 
              email,
-             captchaToken
+             captchaToken: captchaToken.current
          }
 
                 try {
@@ -157,7 +157,7 @@ function Survey() {
                             setInvalidCaptcha(false)
                         }, 2000);
                     } else {
-                        setCaptchaToken(token)
+                        captchaToken.current = token
                         recaptchaValue.current.reset()
                         findGifts()
                     }
