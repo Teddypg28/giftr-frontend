@@ -94,17 +94,16 @@ function Survey() {
 
                 try {
                     setSurveyComplete(true)
-                    const res = await axios.post('https://api.usegiftr.io/submit', answersObject)
+                    const res = await axios.post('http://localhost:8000/submit', answersObject)
                     if (res.status === 200) {
                         setIsRequestSuccessful(true)
                         setProductsObject(res.data)
                     } 
                 } catch (error) {
                     setIsRequestSuccessful(false)
-                    console.log(error)
+                    console.log(error.response.data)
                 }
             }
-  
             
         const handleNextBtnClick = () => {
             if (currentQuestion === 2 && (ageInputValue === 0 || ageInputValue === '')) {
@@ -157,8 +156,8 @@ function Survey() {
                             setInvalidCaptcha(false)
                         }, 2000);
                     } else {
-                        captchaToken.current = token
                         recaptchaValue.current.reset()
+                        captchaToken.current = token
                         findGifts()
                     }
                 }
