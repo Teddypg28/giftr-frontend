@@ -94,13 +94,10 @@ function Survey() {
 
                 try {
                     setSurveyComplete(true)
-                    const resOne = await axios.post('https://api.usegiftr.io/submit', answersObject)
-                    if (resOne.status === 200) {
-                        const resTwo = await axios.post('https://api.usegiftr.io/giftsOne', resOne.data)
-                        if (resTwo.status === 200) {
-                            setIsRequestSuccessful(true)
-                            setProductsObject(resTwo.data)
-                        }
+                    const res = await axios.post('https://api.usegiftr.io/submit', answersObject)
+                    if (res.status === 200) {
+                        setIsRequestSuccessful(true)
+                        setProductsObject(res.data)
                     } 
                 } catch (error) {
                     setIsRequestSuccessful(false)

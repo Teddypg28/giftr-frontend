@@ -2,14 +2,14 @@ import React from 'react';
 
 import { FaAmazon } from 'react-icons/fa'
 
-function ProductCard({cardData, windowSizeQuery}) {
+function ProductCard({cardData, mobileSize}) {
 
     const handleGoToWebsiteClick = (productAsin) => {
        window.open(`http://www.amazon.com/dp/${productAsin}/ref=nosim?tag=giftr05c-20`)
     }
 
     return (
-        <div className={windowSizeQuery ? 'productCardContainerMobile' : 'productCardContainer'}>
+        <div className={mobileSize ? 'productCardContainerMobile' : 'productCardContainer'}>
             <div className='mainPrimeContainer'>
                { cardData.productInfo.is_prime ? 
                 <div className='primeEligibleContainer'> 
