@@ -18,14 +18,14 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         setTimeout(() => {
             currentMessage.current = messageArray[currentRender]
             setCurrentRender(2)
-        }, 10000)
+        }, 15000)
     } else if (currentRender === 2 && isRequestSuccessful) {
         setTimeout(() => {
             currentMessage.current = messageArray[currentRender]
             setCurrentRender(3)
         }, 10000)
     } else if (currentRender === 3 && isRequestSuccessful) {
-        setTimeout(() => { setIsDoneWaiting(true) }, 5000) 
+        setTimeout(() => { setIsDoneWaiting(true) }, 1000) 
     } 
     
     useEffect(() => setCurrentRender(1), [])
@@ -42,7 +42,6 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
         <div className='waiting'>
             <h1 style={{fontSize: '25px', width: '95%'}}>{currentMessage.current}</h1>
-            <p className='waitingSubheading'>Feel free to come back. Just make sure to not close your browser.</p>
             <LoadingIcons.ThreeDots stroke='#38B6FF' />
         </div>
 
