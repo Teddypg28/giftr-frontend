@@ -8,7 +8,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
     const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
 
-    const messageArray = ['Searching Now...This Will Take About Two and a Half Minutes', 'Almost Done...', 'Finished!']
+    const messageArray = ['Searching Now...', 'Almost Done...', 'Finished!']
 
     const [currentRender, setCurrentRender] = useState(0)
 
@@ -18,14 +18,14 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         setTimeout(() => {
             currentMessage.current = messageArray[currentRender]
             setCurrentRender(2)
-        }, 90000)
+        }, 10000)
     } else if (currentRender === 2 && isRequestSuccessful) {
         setTimeout(() => {
             currentMessage.current = messageArray[currentRender]
             setCurrentRender(3)
-        }, 5000)
+        }, 10000)
     } else if (currentRender === 3 && isRequestSuccessful) {
-        setTimeout(() => { setIsDoneWaiting(true) }, 1000) 
+        setTimeout(() => { setIsDoneWaiting(true) }, 5000) 
     } 
     
     useEffect(() => setCurrentRender(1), [])
