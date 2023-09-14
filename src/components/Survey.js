@@ -88,8 +88,8 @@ function Survey() {
              interests: interests.split(', '),
              occasion: occasionInputValue === '' ? occasion : occasionInputValue,
              firstName, 
-             email,
-             captchaToken: captchaToken.current
+             email
+            //  captchaToken: captchaToken.current
          }
 
                 try {
@@ -149,17 +149,18 @@ function Survey() {
                 }
 
                 else {
-                    const token = recaptchaValue.current.getValue()
-                    if (token === "") {
-                        setInvalidCaptcha(true)
-                        setTimeout(() => {
-                            setInvalidCaptcha(false)
-                        }, 2000);
-                    } else {
-                        recaptchaValue.current.reset()
-                        captchaToken.current = token
-                        findGifts()
-                    }
+                    findGifts()
+                    // const token = recaptchaValue.current.getValue()
+                    // if (token === "") {
+                    //     setInvalidCaptcha(true)
+                    //     setTimeout(() => {
+                    //         setInvalidCaptcha(false)
+                    //     }, 2000);
+                    // } else {
+                    //     recaptchaValue.current.reset()
+                    //     captchaToken.current = token
+                    //     findGifts()
+                    // }
                 }
         }
         
