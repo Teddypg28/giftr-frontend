@@ -6,7 +6,7 @@ import LoadingIcons from 'react-loading-icons'
 
 function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
-    const windowSizeQuery = useMediaQuery({query: '(max-width: 500px)'})
+    const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
     const messageArray = ['Searching Now...', 'Almost Done...', 'Finished!']
 
@@ -34,7 +34,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
         isRequestSuccessful === false ? 
          
-        <div className={windowSizeQuery ? 'waitingMobile' : 'waiting'}>
+        <div className={mobileSize ? 'waitingMobile' : 'waiting'}>
             <h1 className='waitingSubheading'>Sorry, something went wrong on our end. Please try again in a bit!</h1>
         </div>
 

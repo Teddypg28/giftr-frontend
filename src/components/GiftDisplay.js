@@ -12,7 +12,7 @@ function GiftDisplay({productsObject}) {
     const productCards = []
     const generateProductCards = () => {
         for (let i = 1; i<Object.keys(productsObject).length + 1; i++) {
-            productCards.push(<ProductCard mobileSize={mobileSize} cardData={productsObject[i]} />)
+            productCards.push(<ProductCard mobileSize={mobileSize} cardData={productsObject[`${i}`]} />)
         }
 
         return productCards
