@@ -101,7 +101,7 @@ function Survey() {
                     } 
                 } catch (error) {
                     setIsRequestSuccessful(false)
-                    console.log(error.response.data)
+                    console.log(error)
                 }
             }
             
