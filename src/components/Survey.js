@@ -100,7 +100,10 @@ function Survey() {
                 console.log('worked')
             } else {
                 setIsRequestSuccessful(false)
+                console.log('Did not work')
                 console.log(res)
+                console.log(res.data)
+                console.log(res.status)
             }
 }
         const handleNextBtnClick = () => {
