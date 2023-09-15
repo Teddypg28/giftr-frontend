@@ -7,8 +7,6 @@ import ProductCard from './ProductCard';
 
 function GiftDisplay({productsObject}) {
 
-    console.log(productsObject)
-
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
     const productCards = []
