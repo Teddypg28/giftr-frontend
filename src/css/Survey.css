@@ -10,6 +10,16 @@
     font-family: Montserrat;
 }
 
+.boy, .girl {
+    border-radius: 50%;
+    background-color: #F4F4F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: auto;
+}
+
 .backBtn {
     cursor: pointer;
     display: flex;
@@ -140,16 +150,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-}
-
-.male, .female {
-    border-radius: 50%;
-    background-color: #F4F4F4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin: auto;
 }
 
 .nextBtn {
