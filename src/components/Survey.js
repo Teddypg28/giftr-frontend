@@ -97,6 +97,7 @@ function Survey() {
             if (res.status === 200) {
                 setIsRequestSuccessful(true)
                 setProductsObject(res.data)
+                console.log('worked')
             } else {
                 setIsRequestSuccessful(false)
                 console.log(res)
