@@ -213,11 +213,11 @@ function Survey() {
         
         :
 
-        !isDoneWaiting ?  
+        !isDoneWaiting  ?  
         
         <WaitingScreen isRequestSuccessful={isRequestSuccessful} setIsDoneWaiting={setIsDoneWaiting} />
 
-        :  <GiftDisplay productsObject={productsObject} />
+        : <GiftDisplay productsObject={productsObject} />
 
     );
 }
