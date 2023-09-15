@@ -92,20 +92,19 @@ function Survey() {
              captchaToken: captchaToken.current
          }
 
-            setSurveyComplete(true)
-            const res = await axios.post('https://api.usegiftr.io/submit', answersObject)
-            if (res.status === 200) {
-                setIsRequestSuccessful(true)
-                setProductsObject(res.data)
-                console.log('worked')
-            } else {
-                setIsRequestSuccessful(false)
-                console.log('Did not work')
-                console.log(res)
-                console.log(res.data)
-                console.log(res.status)
+                try {
+                    setSurveyComplete(true)
+                    const res = await axios.post('https://api.usegiftr.io/submit', answersObject)
+                    if (res.status === 200) {
+                        setIsRequestSuccessful(true)
+                        setProductsObject(res.data)
+                    } 
+                } catch (error) {
+                    setIsRequestSuccessful(false)
+                    console.error(error)
+                }
             }
-}
+            
         const handleNextBtnClick = () => {
             if (currentQuestion === 2 && (ageInputValue === 0 || ageInputValue === '')) {
             setError('Please enter a valid age')
