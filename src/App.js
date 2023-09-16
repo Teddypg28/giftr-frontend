@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import SplashPage from './components/SplashPage';
 
 import Survey from './components/Survey';
-import WaitingScreen from './components/WaitingScreen';
 import Welcome from './components/Welcome';
 
 
