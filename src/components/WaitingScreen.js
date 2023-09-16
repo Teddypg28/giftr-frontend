@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { useMediaQuery } from 'react-responsive';
 
@@ -8,11 +8,21 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
-    const messageArray = ['Searching Now...', 'Almost Done...', 'Finished!']
+    const messageArray = ['Searching Now...', 'Finding the Best Gifts...', 'Almost Done...', 'Finished!']
 
     const [currentRender, setCurrentRender] = useState(0)
 
-    const currentMessage = useRef(messageArray[0])
+    if (currentRender === 0) {
+        setTimeout(() => {
+            setCurrentRender(currentRender + 1)
+        }, 10000);
+    } else if (currentRender === 1) {
+        setTimeout(() => {
+            setCurrentRender(currentRender + 1)
+        }, 5000);
+    } else if (currentRender === 2) {
+        isRequestSuccessful && setIsDoneWaiting(true)
+    }
 
     return (
 
@@ -25,7 +35,7 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         :
 
         <div className='waiting'>
-            <h1 style={{fontSize: '25px', width: '95%'}}>{currentMessage.current}</h1>
+            <h1 style={{fontSize: '25px', width: '95%'}}>{messageArray[currentRender]}</h1>
             <LoadingIcons.ThreeDots stroke='#38B6FF' />
         </div>
 
