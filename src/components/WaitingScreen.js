@@ -8,13 +8,11 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
-    const messageArray = ['Searching Now...', 'Finding You the Best Gifts...', 'Almost Done...', 'Finished!']
+    const messageArray = ['Searching Now...', 'Almost Done...', 'Finished!']
 
     const [currentRender, setCurrentRender] = useState(0)
 
-    const currentMessage = useRef(messageArray[currentRender])
-
-    isRequestSuccessful && setIsDoneWaiting(true)
+    const currentMessage = useRef(messageArray[0])
 
     return (
 
