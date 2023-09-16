@@ -22,8 +22,8 @@ function WaitingScreen({setIsDoneWaiting, isRequestSuccessful}) {
         }, 5000);
     } else if (currentRender === 2) {
         if (isRequestSuccessful) { 
+            setCurrentRender(currentRender + 1)
             setTimeout(() => {
-                setCurrentRender(currentRender + 1)
                 setIsDoneWaiting(true)
             }, 1000);
         }
