@@ -14,8 +14,7 @@ import QuestionOne from './surveyQuestions/QuestionOne'
 import QuestionThree from './surveyQuestions/QuestionThree';
 import QuestionFour from './surveyQuestions/QuestionFour';
 import QuestionFourMobile from './surveyQuestions/QuestionFourMobile';
-import WaitingScreen from './WaitingScreen';
-import GiftDisplay from './GiftDisplay';
+import ListSendingScreen from './ListSendingScreen';
 import GetEmail from './surveyQuestions/GetEmail';
 import QuestionFourTablet from './surveyQuestions/questionFourTablet';
 
@@ -34,8 +33,6 @@ function Survey() {
 
     const [isFirstOccasionRender, setIsFirstOccasionRender] = useState(true)
     const [surveyComplete, setSurveyComplete] = useState(false)
-    const [isDoneWaiting, setIsDoneWaiting] = useState(false)
-    const [isRequestSuccessful, setIsRequestSuccessful] = useState(null)
     const [error, setError] = useState('')
     const [invalidCaptcha, setInvalidCaptcha] = useState(false)
 
@@ -46,8 +43,6 @@ function Survey() {
     const [occasionInputValue, setOccasionInputValue] = useState('')
     const [email, setEmail] = useState('')
     const [firstName, setFirstName] = useState('')
-
-    const [productsObject, setProductsObject] = useState({})
 
     const handleOccasionIconClick = (name) => {
         setOccasion(name)
@@ -93,13 +88,8 @@ function Survey() {
 
                 try {
                     setSurveyComplete(true)
-                    const res = await axios.post('https://api.usegiftr.io/submit', answersObject)
-                    if (res.status === 200) {
-                        setIsRequestSuccessful(true)
-                        setProductsObject(res.data)
-                    }
+                    await axios.post('https://api.usegiftr.io/submit', answersObject)
                 } catch (error) {
-                    setIsRequestSuccessful(false)
                     console.error(error)
                 }
             }
@@ -212,11 +202,7 @@ function Survey() {
         
         :
 
-        !isDoneWaiting  ?  
-        
-        <WaitingScreen isRequestSuccessful={isRequestSuccessful} setIsDoneWaiting={setIsDoneWaiting} />
-
-        : <GiftDisplay productsObject={productsObject} />
+        <ListSendingScreen />
 
     );
 }
