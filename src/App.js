@@ -11,7 +11,8 @@ function App() {
 
   // return !startSurvey ? <Welcome setStartSurvey={setStartSurvey} /> : <Survey />
 
-  return <SplashPage />
+  <SplashPage />
+
   
 }
 

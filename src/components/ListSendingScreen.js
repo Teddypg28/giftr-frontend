@@ -7,8 +7,8 @@ function ListSendingScreen() {
 
     const mobileSize = useMediaQuery({query: '(max-width: 500px)'})
 
-    const message = 'Your gift list is on its way!'
-    const submessage = "You'll receive an email from us within the next minute."
+    const message = 'We are working on your gift list now!'
+    const submessage = "You'll receive an email from us within the next couple of minutes"
 
     return (
 
