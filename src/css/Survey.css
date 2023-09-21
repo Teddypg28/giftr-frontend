@@ -10,7 +10,7 @@
     font-family: Montserrat;
 }
 
-.boy, .girl {
+.male, .female {
     border-radius: 50%;
     background-color: #F4F4F4;
     display: flex;
