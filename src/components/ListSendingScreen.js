@@ -20,7 +20,7 @@ function ListSendingScreen() {
                 <h1 className={mobileSize ? 'messageContainerHeadingMobile' : 'messageContainerHeading'}>{message}</h1>
                 <p className={mobileSize ? 'messageContainerSubheadingMobile' : 'messageContainerSubheading'}>{submessage}</p>
                 <p className={mobileSize ? 'messageContainerSubheadingMobile' : 'messageContainerSubheading'}>{reminder}</p>
-                <MdMarkEmailRead size={mobileSize ? 120 : 150} color='white' style={{marginTop: '20px'}} />
+                <MdMarkEmailRead size={mobileSize ? 120 : 150} color='white' style={{marginTop: '50px'}} />
             </div>
         </div>
 
