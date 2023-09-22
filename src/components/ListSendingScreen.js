@@ -15,7 +15,7 @@ function ListSendingScreen() {
 
         <div className='waiting'>
             {!mobileSize && <div className='cornerPicOne'></div>}
-            <img alt='' src={require('../images/giftr-logo.png')} className='messageContainerLogo' />
+            <img alt='' src={require('../images/giftr-logo.png')} className={mobileSize ? 'messageContainerLogoMobile' : 'messageContainerLogo'} />
             <div className='messageContainer'>
                 <h1 className={mobileSize ? 'messageContainerHeadingMobile' : 'messageContainerHeading'}>{message}</h1>
                 <p className={mobileSize ? 'messageContainerSubheadingMobile' : 'messageContainerSubheading'}>{submessage}</p>

@@ -163,26 +163,32 @@
     width: 250px;
 }
 
+.messageContainerLogoMobile {
+    height: 180px;
+    width: 180px;
+    margin-bottom: 30px;
+}
+
 .messageContainerHeading {
     font-size: 50px;
     color: #38B6FF
 }
 
 .messageContainerHeadingMobile {
-    font-size: 30px;
+    font-size: 25px;
     width: 90%;
     margin: auto;
     color: #38B6FF
 }
 
 .messageContainerSubheading {
-    font-size: 23px;
+    font-size: 25px;
     margin-top: 40px;
     color: whitesmoke;
 }
 
 .messageContainerSubheadingMobile {
-    font-size: 20px;
+    font-size: 18px;
     width: 90%;
     margin: auto;
     margin-top: 40px;
