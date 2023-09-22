@@ -164,8 +164,8 @@ function Survey() {
 
     const questions = {
         1: 'What is his or her gender?',
-        2: `What is ${gender === 'boy' ? 'his' : 'her'} age?`, 
-        3: `What are some interests that ${gender === 'boy' ? 'he' : 'she'} has?`,
+        2: `What is ${gender === 'male' ? 'his' : 'her'} age?`, 
+        3: `What are some interests that ${gender === 'male' ? 'he' : 'she'} has?`,
         4: "What's the special occasion?",
         5: 'Where should we send your gift list to?'
     }
