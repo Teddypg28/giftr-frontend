@@ -112,6 +112,12 @@
     margin-top: -10px;
 }
 
+.mainWelcomeContainerMonitor {
+    background-color: #121212; 
+    height: 100vh;
+    width: 100vw;
+}
+
 .mainWelcomeContainerLaptop {
     background-color: #121212; 
     height: 100vh;
