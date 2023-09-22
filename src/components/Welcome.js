@@ -113,11 +113,11 @@ function Welcome({setStartSurvey}) {
                             </div>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
                                 <img className={monitorSize ? 'stepsMonitor' : laptopSize ? 'stepsLaptop' : mobileSize ? 'stepsMobile' : 'stepsTablet'} alt='step 1' src={require('../images/step2.png')} />
-                                <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Wait under 30 seconds.</h1>
+                                <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Enter your preferred email.</h1>
                             </div>
                             <div className={monitorSize ? 'stepContainerMonitor' : 'stepContainerTablet'}>
                                 <img className={monitorSize ? 'stepsMonitor' : laptopSize ? 'stepsLaptop' : mobileSize ? 'stepsMobile' : 'stepsTablet'} alt='step 1' src={require('../images/step3.png')} />
-                                <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>Ta-da! A plethora of specific gift ideas sent directly to your email!</h1>
+                                <h1 className={monitorSize ? 'stepText' : 'stepTextTablet'}>A plethora of gifts ideas delivered straight to your email!</h1>
                             </div>
                             <div onClick={() => setStartSurvey(true)} className='button' style={{height: mobileSize ? '55px' : '70px', width: mobileSize ? '300px' : '400px'}}>
                                     <h1>Start Here</h1>
