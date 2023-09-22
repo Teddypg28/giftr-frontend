@@ -170,18 +170,22 @@
 
 .messageContainerHeadingMobile {
     font-size: 30px;
+    width: 90%;
+    margin: auto;
     color: #38B6FF
 }
 
 .messageContainerSubheading {
     font-size: 23px;
+    margin-top: 40px;
     color: whitesmoke;
 }
 
 .messageContainerSubheadingMobile {
     font-size: 20px;
-    width: 95%;
+    width: 90%;
     margin: auto;
+    margin-top: 40px;
     color: whitesmoke;
 }
 

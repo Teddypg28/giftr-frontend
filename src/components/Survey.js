@@ -14,7 +14,6 @@ import QuestionOne from './surveyQuestions/QuestionOne'
 import QuestionThree from './surveyQuestions/QuestionThree';
 import QuestionFour from './surveyQuestions/QuestionFour';
 import QuestionFourMobile from './surveyQuestions/QuestionFourMobile';
-import QuestionFive from './surveyQuestions/QuestionFive';
 import ListSendingScreen from './ListSendingScreen';
 import GetEmail from './surveyQuestions/GetEmail';
 import QuestionFourTablet from './surveyQuestions/questionFourTablet';
@@ -31,7 +30,6 @@ function Survey() {
 
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [ageInputValue, setAgeInputValue] = useState(1)
-    const [budgetInputValue, setBudgetInputValue] = useState(150)
 
     const [isFirstOccasionRender, setIsFirstOccasionRender] = useState(true)
     const [surveyComplete, setSurveyComplete] = useState(false)
@@ -39,7 +37,6 @@ function Survey() {
     const [invalidCaptcha, setInvalidCaptcha] = useState(false)
 
     const [age, setAge] = useState(0)
-    const [budget, setBudget] = useState()
     const [gender, setGender] = useState('')
     const [interests, setInterests] = useState('')
     const [occasion, setOccasion] = useState('')
@@ -82,7 +79,6 @@ function Survey() {
         const answersObject = {
              gender,
              age,
-             budget,
              interests: interests.split(', '),
              occasion: occasionInputValue === '' ? occasion : occasionInputValue,
              firstName, 
@@ -104,14 +100,7 @@ function Survey() {
             setTimeout(() => {
                 setError('')
             }, 1500);
-        }
-            else if (currentQuestion === 5 && (budgetInputValue === 0 || budgetInputValue === '')) {
-            setError('Please enter a minimum budget of $10')
-            setTimeout(() => {
-                setError('')
-            }, 1500);
-            }
-            else if (currentQuestion === 3 && interests.trim() === '') {
+        }   else if (currentQuestion === 3 && interests.trim() === '') {
                 setError('Please enter a couple of interests')
                 setTimeout(() => {
                     setError('')
@@ -170,8 +159,7 @@ function Survey() {
         4: mobileSize ? <QuestionFourMobile isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
         tabletSize ? <QuestionFourTablet isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionIconClick={handleOccasionIconClick} handleOccasionInputChange={handleOccasionInputChange} /> :
         <QuestionFour isFirstOccasionRender={isFirstOccasionRender} occasion={occasion} occasionInputValue={occasionInputValue} handleOccasionInputChange={handleOccasionInputChange} handleOccasionIconClick={handleOccasionIconClick}/>,
-        5: <QuestionFive setBudget={setBudget} budgetInputValue={budgetInputValue} setBudgetInputValue={setBudgetInputValue} />,
-        6: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
+        5: <GetEmail handleEmailInputChange={handleEmailInputChange} handleFirstNameInputChange={handleFirstNameInputChange} />
     }
 
     const questions = {
@@ -179,8 +167,7 @@ function Survey() {
         2: `What is ${gender === 'boy' ? 'his' : 'her'} age?`, 
         3: `What are some interests that ${gender === 'boy' ? 'he' : 'she'} has?`,
         4: "What's the special occasion?",
-        5: "What's your budget?",
-        6: 'Where should we send your gift list to?'
+        5: 'Where should we send your gift list to?'
     }
 
     return (
@@ -191,7 +178,7 @@ function Survey() {
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>
-            {currentQuestion === 6 && 
+            {currentQuestion === 5 && 
             <>
                 <div className='captchaContainer'>
                     <ReCAPTCHA ref={recaptchaValue} sitekey='6LfJLg4oAAAAAOfTMIXCpHZl9dni85wKSTJ3mtEV' />
@@ -202,7 +189,7 @@ function Survey() {
                 </div>
             </>
             }
-            {currentQuestion !== 6 && currentQuestion !== 1 &&
+            {currentQuestion !== 5 && currentQuestion !== 1 &&
             <div onClick={handleNextBtnClick} className='nextBtn'>
                 <h3>Next</h3>
             </div>}
