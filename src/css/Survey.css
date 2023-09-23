@@ -172,14 +172,14 @@
 .messageContainerHeading {
     font-size: 45px;
     margin-bottom: 30px;
-    color: #38B6FF
+    color: white
 }
 
 .messageContainerHeadingMobile {
     font-size: 25px;
     width: 90%;
     margin: auto;
-    color: #38B6FF
+    color: white
 }
 
 .messageContainerSubheading {
