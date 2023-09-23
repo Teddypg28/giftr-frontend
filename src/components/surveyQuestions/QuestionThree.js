@@ -18,7 +18,7 @@ function QuestionThree({interests, setInterests}) {
                 <h3 className={(monitorSize || laptopSize ) ? 'interestSubheading' : tabletSize ? 'interestSubheadingTablet' : 'interestSubheadingMobile'}>
                     Try to come up with at least 3 - 5 interests. Make sure to <strong>separate each one with a comma.</strong>
                 </h3>
-                <textarea className={(monitorSize || laptopSize ) ? 'interestTextArea' : tabletSize ? 'interestTextAreaTablet' : 'interestTextAreaMobile'} value={interests} autoCorrect='on' onChange={handleInterestsChange} placeholder={`Example: working out, bedroom decor, listening to music`}/>
+                <textarea className={(monitorSize || laptopSize ) ? 'interestTextArea' : tabletSize ? 'interestTextAreaTablet' : 'interestTextAreaMobile'} value={interests} autoCorrect='on' onChange={handleInterestsChange} placeholder={`Example: bedroom decor, skincare, beauty`}/>
             </div>
         </>
     );
