@@ -174,7 +174,7 @@ function Survey() {
       !surveyComplete ? 
         
         <div className={monitorSize ? 'surveyContainer' : laptopSize ? 'surveyContainerLaptop' : 'surveyContainerTablet'}>
-             <h1 style={{color: error ? '#38B6FF' : '#373737'}} className={error ? 'questionError' : mobileSize ? 'questionMobile' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
+             <h1 style={{color: error ? '#38B6FF' : '#373737'}} className={(error && mobileSize) ? 'questionErrorMobile' : error ? 'questionError' : mobileSize ? 'questionMobile' : 'question'}>{!error ? questions[currentQuestion]: error}</h1>
              <div className='questionContainer'>
                 {questionOptions[currentQuestion]}
              </div>

@@ -304,6 +304,14 @@
 }
 
 .questionError {
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 35px;
+    color: red;
+}
+
+.questionErrorMobile {
     width: 95%;
     font-family: Montserrat;
     text-align: center;
