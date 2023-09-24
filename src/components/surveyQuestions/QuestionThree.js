@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useMediaQuery } from 'react-responsive';
 
-function QuestionThree({interests, setInterests}) {
+function QuestionThree({interests, setInterests, gender}) {
 
     const handleInterestsChange = (e) => {
         setInterests(e.target.value.replace(/\n/, ""))
@@ -18,7 +18,7 @@ function QuestionThree({interests, setInterests}) {
                 <h3 className={(monitorSize || laptopSize ) ? 'interestSubheading' : tabletSize ? 'interestSubheadingTablet' : 'interestSubheadingMobile'}>
                     Try to come up with at least 3 - 5 interests. Make sure to <strong>separate each one with a comma.</strong>
                 </h3>
-                <textarea className={(monitorSize || laptopSize ) ? 'interestTextArea' : tabletSize ? 'interestTextAreaTablet' : 'interestTextAreaMobile'} value={interests} autoCorrect='on' onChange={handleInterestsChange} placeholder={`Example: bedroom decor, skincare, beauty`}/>
+                <textarea className={(monitorSize || laptopSize ) ? 'interestTextArea' : tabletSize ? 'interestTextAreaTablet' : 'interestTextAreaMobile'} value={interests} autoCorrect='on' onChange={handleInterestsChange} placeholder={gender === 'female' ? 'Example: bedroom decor, skincare, beauty' : 'Example: playing golf, listening to music, hunting'}/>
             </div>
         </>
     );
